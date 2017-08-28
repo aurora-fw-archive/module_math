@@ -4,6 +4,8 @@
 
 namespace Aurora {
 	namespace Math {
+		
+		// Constructors
 		Vector2D::Vector2D()
 			: x(0.0f), y(0.0f)
 		{}
@@ -22,6 +24,14 @@ namespace Aurora {
 			this->y = v.y;
 		}
 
+		Vector2D::Vector2D(const Vector4D& v)
+		{
+			this->x = v.x;
+			this->y = v.y;
+		}
+
+		// Operations
+		// Using an existing Vector2D
 		Vector2D& Vector2D::add(const Vector2D& v)
 		{
 			x += v.x;
@@ -54,6 +64,7 @@ namespace Aurora {
 			return *this;
 		}
 
+		// Using a value (scalar)
 		Vector2D& Vector2D::add(float val)
 		{
 			x += val;
@@ -86,6 +97,7 @@ namespace Aurora {
 			return *this;
 		}
 
+		// Using an x and y value
 		Vector2D& Vector2D::add(float valX, float valY)
 		{
 			x += valX;
@@ -118,6 +130,15 @@ namespace Aurora {
 			return *this;
 		}
 
+		void Vector2D::setX(float val) {
+			x = val;
+		}
+
+		void Vector2D::setY(float val) {
+			y = val;
+		}
+
+		// Operators
 		Vector2D operator+(Vector2D left, const Vector2D& right)
 		{
 			return left.add(right);
@@ -228,11 +249,23 @@ namespace Aurora {
 			return x >= other.x && y >= other.y;
 		}
 
-		float Vector2D::distance(const Vector2D& other) const
+		// Vector operations
+		float Vector2D::length() const
 		{
-			float a = x - other.x;
-			float b = y - other.y;
-			return sqrt(a * a + b * b);
+			return sqrt(x * x + y * y);
+		}
+
+		void Vector2D::normalize()
+		{
+			float length = magnitude();
+			this->x /= length;
+			this->y /= length;
+		}
+
+		Vector2D Vector2D::normalized() const
+		{
+			float length = magnitude();
+			return Vector2D(x / length, y / length);
 		}
 
 		float Vector2D::dot(const Vector2D& other) const
@@ -240,17 +273,18 @@ namespace Aurora {
 			return x * other.x + y * other.y;
 		}
 
-		float Vector2D::magnitude() const
+		float Vector2D::distanceToPoint(const Vector2D& other) const
 		{
-			return sqrt(x * x + y * y);
+			float a = x - other.x;
+			float b = y - other.y;
+			return sqrt(a * a + b * b);
 		}
 
-		Vector2D Vector2D::normalise() const
+		float Vector2D::distanceToLine(const Vector2D& point, const Vector2D& direction) const
 		{
-			float length = magnitude();
-			return Vector2D(x / length, y / length);
+			// TODO: Find the formula to get the distance
 		}
-
+		
 		std::string Vector2D::toString() const
 		{
 			return "Vector2D: (" + std::to_string(x) + ", " + std::to_string(y) + ")";
