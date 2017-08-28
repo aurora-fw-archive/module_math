@@ -86,6 +86,38 @@ namespace Aurora {
 			return *this;
 		}
 
+		Vector2D& Vector2D::add(float valX, float valY)
+		{
+			x += valX;
+			y += valY;
+
+			return *this;
+		}
+
+		Vector2D& Vector2D::subtract(float valX, float valY)
+		{
+			x -= valX;
+			y -= valY;
+
+			return *this;
+		}
+
+		Vector2D& Vector2D::multiply(float valX, float valY)
+		{
+			x *= valX;
+			y *= valY;
+
+			return *this;
+		}
+
+		Vector2D& Vector2D::divide(float valX, float valY)
+		{
+			x /= valX;
+			y /= valY;
+
+			return *this;
+		}
+
 		Vector2D operator+(Vector2D left, const Vector2D& right)
 		{
 			return left.add(right);

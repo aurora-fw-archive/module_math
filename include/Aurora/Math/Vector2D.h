@@ -37,6 +37,11 @@ namespace Aurora {
 			Vector2D& multiply(float );
 			Vector2D& divide(float );
 
+			Vector2D& add(float , float );
+			Vector2D& subtract(float, float );
+			Vector2D& multiply(float , float );
+			Vector2D& divide(float , float );
+
             void setX(float );
             void setY(float );
 
