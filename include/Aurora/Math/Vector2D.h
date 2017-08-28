@@ -91,7 +91,7 @@ namespace Aurora {
 			 *	Adds the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(Vector2D& )
+			 *	@see add(const Vector2D& )
 			 * 	@see add(float , float )
 			 */
 			Vector2D& add(float );
@@ -99,7 +99,7 @@ namespace Aurora {
 			 *	Subtracts the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(Vector2D& )
+			 *	@see subtract(const Vector2D& )
 			 * 	@see subtract(float , float )
 			 */
 			Vector2D& subtract(float );
@@ -107,7 +107,7 @@ namespace Aurora {
 			 *	Multiplies the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(Vector2D& )
+			 *	@see multiply(const Vector2D& )
 			 * 	@see multiply(float , float )
 			 */
 			Vector2D& multiply(float );
@@ -115,7 +115,7 @@ namespace Aurora {
 			 *	Divides the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(Vector2D& )
+			 *	@see divide(const Vector2D& )
 			 * 	@see divide(float , float )
 			 */
 			Vector2D& divide(float );
@@ -126,7 +126,7 @@ namespace Aurora {
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(Vector2D& )
+			 *	@see add(const Vector2D& )
 			 * 	@see add(float )
 			 */
 			Vector2D& add(float , float );
@@ -135,7 +135,7 @@ namespace Aurora {
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(Vector2D& )
+			 *	@see subtract(const Vector2D& )
 			 * 	@see subtract(float )
 			 */
 			Vector2D& subtract(float, float );
@@ -144,7 +144,7 @@ namespace Aurora {
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(Vector2D& )
+			 *	@see multiply(const Vector2D& )
 			 * 	@see multiply(float )
 			 */
 			Vector2D& multiply(float , float );
@@ -153,7 +153,7 @@ namespace Aurora {
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(Vector2D& )
+			 *	@see divide(const Vector2D& )
 			 * 	@see divide(float )
 			 */
 			Vector2D& divide(float , float );
@@ -174,17 +174,17 @@ namespace Aurora {
 			// Operators
 			/**
 			 *	Adds the right vector's coordinates to the left one.
-			 *	@see operator-(Vector2D , const Vector2D& )
+			 *	@see operator-(Vector2D, const Vector2D& )
 			 */
 			friend Vector2D operator+(Vector2D , const Vector2D& );
 			/**
 			 *  Subtracts the right vector's coordinates to the left one.
-			 *	@see operator+(Vector2D , const Vector2D& )
+			 *	@see operator+(Vector2D, const Vector2D& )
 			 */
 			friend Vector2D operator-(Vector2D , const Vector2D& );
 			/**
 			 *	Multiplies the left vector's coordinates with the right vector.
-			 *	@see operator/(Vector2D , const Vector2D& )
+			 *	@see operator/(Vector2D, const Vector2D& )
 			 */
 			friend Vector2D operator*(Vector2D , const Vector2D& );
 			/**
