@@ -318,7 +318,7 @@ namespace Aurora {
 			float length() const;
 			/**
 			 *	Return true if any coordinate of this vector is null.
-			 *	@return True if any coordinate is NULL. False otherwhise.
+			 *	@return True if any coordinate is NAN. False otherwhise.
 			 */
 			bool isNull() const;
 			/**
@@ -391,7 +391,7 @@ namespace Aurora {
 
 		inline bool Vector2D::isNull() const
 		{
-			return x == NULL || y == NULL;
+			return x == NAN || y == NAN;
 		}
 	}
 }
