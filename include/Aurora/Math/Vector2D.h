@@ -23,36 +23,42 @@ namespace Aurora {
 		 * 	to do vector operations.
 		 */
 		struct AURORA_PREFIX Vector2D {
-			// Constructors
 			/**
 			 *	Constructs a vector with zero coordinates.
+			 *	@see Vector2D(float )
+			 *	@see Vector2D(float , float )
 			 */
 			Vector2D();
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param scalar The float value to both x and y coordinates.
+			 *	@see Vector2D()
+			 *	@see Vector2D(float , float )
 			 */
 			Vector2D(float );
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param x The x value for the x coordinate.
 			 * 	@param y The y value for the y coordinate.
+			 *	@see Vector2D(float )
+			 *	@see Vector2D(float , float )
 			 */
 			Vector2D(float , float );
 			/**
 			 *	Constructs a vector using the coordinates from the given Vector3D.
 			 *	The z value is not used.
 			 *	@param v The Vector3D to get both the x and y coordinates from.
+			 *	@see Vector2D(const Vector4D& )
 			 */
 			Vector2D(const Vector3D& );
 			/**
 			 *	Construct a vector using the coordinates from the given Vector4D.
 			 *	The z and w values are not used.
 			 *	@param v The Vector4D to get both the x and y coordinates from.
+			 *	@see Vector2D(const Vector3D& )
 			 */
             Vector2D(const Vector4D& );
 
-			// Operations
 			/**
 			 *	Adds the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
@@ -86,7 +92,6 @@ namespace Aurora {
 			 */
 			Vector2D& divide(const Vector2D& );
 
-			// Using a value (scalar)
 			/**
 			 *	Adds the given value to this vector.
 			 *	@param val The value for both coordinates.
@@ -171,7 +176,6 @@ namespace Aurora {
 			 */
             void setY(float );
 
-			// Operators
 			/**
 			 *	Adds the right vector's coordinates to the left one.
 			 *	@see operator-(Vector2D, const Vector2D& )
@@ -300,7 +304,6 @@ namespace Aurora {
 			 */
 			bool operator>=(const Vector2D& ) const;
 
-			// Vector operations
 			/**
 			 *	The exact same thing as length().
 			 *	@return The magnitude/length of this vector.
@@ -369,9 +372,15 @@ namespace Aurora {
 			friend std::ostream& operator<<(std::ostream& , const Vector2D& );
 
 			/**
-			 *	The vector's x and y coordinates.
+			 *	The vector's x coordinate.
+			 * 	@see y
 			 */
-			float x, y;
+			float x;
+			/**
+			 *	The vector's y coordinate.
+			 *	@see x
+			 */
+			float y;
 		};
 
 		// Inline definitions
