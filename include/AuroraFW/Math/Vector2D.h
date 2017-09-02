@@ -1,19 +1,38 @@
-#include <Aurora/TLib/Target/PragmaOnce.h>
-#if defined(AURORA_TARGET_PRAGMA_ONCE_SUPPORT) && AURORA_TARGET_PRAGMA_ONCE_SUPPORT
-    #pragma once
-#endif
+/****************************************************************************
+** ┌─┐┬ ┬┬─┐┌─┐┬─┐┌─┐  ┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬┌─┐┬─┐┬┌─
+** ├─┤│ │├┬┘│ │├┬┘├─┤  ├┤ ├┬┘├─┤│││├┤ ││││ │├┬┘├┴┐
+** ┴ ┴└─┘┴└─└─┘┴└─┴ ┴  └  ┴└─┴ ┴┴ ┴└─┘└┴┘└─┘┴└─┴ ┴
+** A Powerful General Purpose Framework
+** More information in: https://aurora-fw.github.io/
+**
+** Copyright (C) 2017 Aurora Framework, All rights reserved.
+**
+** This file is part of the Aurora Framework. This framework is free
+** software; you can redistribute it and/or modify it under the terms of
+** the GNU Lesser General Public License version 3 as published by the
+** Free Software Foundation and appearing in the file LICENSE included in
+** the packaging of this file. Please review the following information to
+** ensure the GNU Lesser General Public License version 3 requirements
+** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
+****************************************************************************/
 
-#include <Aurora/Common.h>
+/** \file Aurora/Math/Vector2D.h
+ * 2D Vector/Vertex Header. This contains a Vector2D struct that
+ * represents a vector or vertex in 2D space.
+ */
 
-#ifndef INCLUDE_H_AURORA_MATH_2DVECTOR
-#define INCLUDE_H_AURORA_MATH_2DVECTOR
+#ifndef AURORAFW_MATH_2DVECTOR_H
+#define AURORAFW_MATH_2DVECTOR_H
 
-#include <iostream>
-#include <Aurora/Math/Vector3D.h>
-#include <Aurora/Math/Vector4D.h>
+#include <AuroraFW/Global.h>
+
+#include <AuroraFW/TLib/_IOStream.h>
+
+#include <AuroraFW/Math/Vector3D.h>
+#include <AuroraFW/Math/Vector4D.h>
 
 
-namespace Aurora {
+namespace AuroraFW {
 	namespace Math {
 		struct Vector3D;
         struct Vector4D;
@@ -22,7 +41,7 @@ namespace Aurora {
 		 * 	position in 2D coordinates, allows to manipulate them and also
 		 * 	to do vector operations.
 		 */
-		struct AURORA_PREFIX Vector2D {
+		struct AFW_PREFIX Vector2D {
 			/**
 			 *	Constructs a vector with zero coordinates.
 			 *	@see Vector2D(float )
@@ -50,14 +69,14 @@ namespace Aurora {
 			 *	@param v The Vector3D to get both the x and y coordinates from.
 			 *	@see Vector2D(const Vector4D& )
 			 */
-			Vector2D(const Vector3D& );
+			explicit Vector2D(const Vector3D& );
 			/**
 			 *	Construct a vector using the coordinates from the given Vector4D.
 			 *	The z and w values are not used.
 			 *	@param v The Vector4D to get both the x and y coordinates from.
 			 *	@see Vector2D(const Vector3D& )
 			 */
-            Vector2D(const Vector4D& );
+            explicit Vector2D(const Vector4D& );
 
 			/**
 			 *	Adds the given vector's coordinates to this vector.
@@ -396,4 +415,4 @@ namespace Aurora {
 	}
 }
 
-#endif // INCLUDE_H_AURORA_MATH_2DVECTOR
+#endif // AURORAFW_MATH_2DVECTOR_H

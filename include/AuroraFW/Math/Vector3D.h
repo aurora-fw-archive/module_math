@@ -1,23 +1,36 @@
-#include <Aurora/TLib/Target/PragmaOnce.h>
-#if defined(AURORA_TARGET_PRAGMA_ONCE_SUPPORT) && AURORA_TARGET_PRAGMA_ONCE_SUPPORT
-    #pragma once
-#endif
+/****************************************************************************
+** ┌─┐┬ ┬┬─┐┌─┐┬─┐┌─┐  ┌─┐┬─┐┌─┐┌┬┐┌─┐┬ ┬┌─┐┬─┐┬┌─
+** ├─┤│ │├┬┘│ │├┬┘├─┤  ├┤ ├┬┘├─┤│││├┤ ││││ │├┬┘├┴┐
+** ┴ ┴└─┘┴└─└─┘┴└─┴ ┴  └  ┴└─┴ ┴┴ ┴└─┘└┴┘└─┘┴└─┴ ┴
+** A Powerful General Purpose Framework
+** More information in: https://aurora-fw.github.io/
+**
+** Copyright (C) 2017 Aurora Framework, All rights reserved.
+**
+** This file is part of the Aurora Framework. This framework is free
+** software; you can redistribute it and/or modify it under the terms of
+** the GNU Lesser General Public License version 3 as published by the
+** Free Software Foundation and appearing in the file LICENSE included in
+** the packaging of this file. Please review the following information to
+** ensure the GNU Lesser General Public License version 3 requirements
+** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
+****************************************************************************/
 
-#include <Aurora/Common.h>
+#ifndef AURORAFW_MATH_3DVECTOR_H
+#define AURORAFW_MATH_3DVECTOR_H
 
-#ifndef INCLUDE_H_AURORA_MATH_3DVECTOR
-#define INCLUDE_H_AURORA_MATH_3DVECTOR
+#include <AuroraFW/Global.h>
 
 #include <ostream>
-#include <Aurora/Math/Vector2D.h>
-#include <Aurora/Math/Vector4D.h>
+#include <AuroraFW/Math/Vector2D.h>
+#include <AuroraFW/Math/Vector4D.h>
 
-namespace Aurora {
+namespace AuroraFW {
 	namespace Math {
 		struct vec2;
 		struct vec4;
 
-		struct AURORA_PREFIX Vector3D {
+		struct AFW_PREFIX Vector3D {
 			Vector3D();
 			Vector3D(float );
 			Vector3D(float , float , float );
@@ -70,4 +83,4 @@ namespace Aurora {
 	}
 }
 
-#endif // INCLUDE_H_AURORA_MATH_3DVECTOR
+#endif // AURORAFW_MATH_3DVECTOR_H
