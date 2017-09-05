@@ -18,7 +18,6 @@
 
 #include <AuroraFW/Math/Vector2D.h>
 #include <string>
-#include <cmath>
 
 namespace AuroraFW {
 	namespace Math {
@@ -37,16 +36,12 @@ namespace AuroraFW {
 		{}
 
 		Vector2D::Vector2D(const Vector3D& v)
-		{
-			this->x = v.x;
-			this->y = v.y;
-		}
+			: x(v.x), y(v.y)
+		{}
 
 		Vector2D::Vector2D(const Vector4D& v)
-		{
-			this->x = v.x;
-			this->y = v.y;
-		}
+			: x(v.x), y(v.y)
+		{}
 
 		// Operations
 		// Using an existing Vector2D
@@ -157,44 +152,44 @@ namespace AuroraFW {
 		}
 
 		// Operators
-		Vector2D operator+(Vector2D left, const Vector2D& right)
+		Vector2D Vector2D::operator+(const Vector2D& right)
 		{
-			return left.add(right);
+			return add(right);
 		}
 
-		Vector2D operator-(Vector2D left, const Vector2D& right)
+		Vector2D Vector2D::operator-(const Vector2D& right)
 		{
-			return left.subtract(right);
+			return subtract(right);
 		}
 
-		Vector2D operator*(Vector2D left, const Vector2D& right)
+		Vector2D Vector2D::operator*(const Vector2D& right)
 		{
-			return left.multiply(right);
+			return multiply(right);
 		}
 
-		Vector2D operator/(Vector2D left, const Vector2D& right)
+		Vector2D Vector2D::operator/(const Vector2D& right)
 		{
-			return left.divide(right);
+			return divide(right);
 		}
 
-		Vector2D operator+(Vector2D left, float value)
+		Vector2D Vector2D::operator+(float value)
 		{
-			return Vector2D(left.x + value, left.y + value);
+			return Vector2D(x + value, y + value);
 		}
 
-		Vector2D operator-(Vector2D left, float value)
+		Vector2D Vector2D::operator-(float value)
 		{
-			return Vector2D(left.x - value, left.y - value);
+			return Vector2D(x - value, y - value);
 		}
 
-		Vector2D operator*(Vector2D left, float value)
+		Vector2D Vector2D::operator*(float value)
 		{
-			return Vector2D(left.x * value, left.y * value);
+			return Vector2D(x * value, y * value);
 		}
 
-		Vector2D operator/(Vector2D left, float value)
+		Vector2D Vector2D::operator/(float value)
 		{
-			return Vector2D(left.x / value, left.y / value);
+			return Vector2D(x / value, y / value);
 		}
 
 		Vector2D& Vector2D::operator+=(const Vector2D& other)

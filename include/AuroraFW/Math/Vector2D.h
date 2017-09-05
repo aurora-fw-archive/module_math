@@ -31,6 +31,7 @@
 #include <AuroraFW/Math/Vector3D.h>
 #include <AuroraFW/Math/Vector4D.h>
 
+#include <cmath>
 
 namespace AuroraFW {
 	namespace Math {
@@ -144,7 +145,6 @@ namespace AuroraFW {
 			 */
 			Vector2D& divide(float );
 
-			// Using an x and y value
 			/**
 			 *	Adds the given values to this vector.
 			 *	@param valX The value for the x coordinate.
@@ -199,43 +199,43 @@ namespace AuroraFW {
 			 *	Adds the right vector's coordinates to the left one.
 			 *	@see operator-(Vector2D, const Vector2D& )
 			 */
-			friend Vector2D operator+(Vector2D , const Vector2D& );
+			Vector2D operator+(const Vector2D& );
 			/**
 			 *  Subtracts the right vector's coordinates to the left one.
 			 *	@see operator+(Vector2D, const Vector2D& )
 			 */
-			friend Vector2D operator-(Vector2D , const Vector2D& );
+			Vector2D operator-(const Vector2D& );
 			/**
 			 *	Multiplies the left vector's coordinates with the right vector.
 			 *	@see operator/(Vector2D, const Vector2D& )
 			 */
-			friend Vector2D operator*(Vector2D , const Vector2D& );
+			Vector2D operator*(const Vector2D& );
 			/**
 			 *	Divides the left vector's coordinates with the right vector.
-			 *	@see operator*(Vector2D , const Vector2D& )
+			 *	@see operator*(Vector2D, const Vector2D& )
 			 */
-			friend Vector2D operator/(Vector2D , const Vector2D& );
+			Vector2D operator/(const Vector2D& );
 
 			/**
 			 *	Adds the given value to the vector.
 			 *	@see operator-(Vector2D , float )
 			 */
-			friend Vector2D operator+(Vector2D , float );
+			Vector2D operator+(float );
 			/**
 			 *	Subtracts the given value to the vector.
 			 *	@see operator+(Vector2D , float )
 			 */
-			friend Vector2D operator-(Vector2D , float );
+			Vector2D operator-(float );
 			/**
 			 *	Multiplies vector with the given value.
 			 *	@see operator/(Vector2D , float )
 			 */
-			friend Vector2D operator*(Vector2D , float );
+			Vector2D operator*(float );
 			/**
 			 *	Divides vector with the given value.
 			 *	@see operator*(Vector2D , float )
 			 */
-			friend Vector2D operator/(Vector2D , float );
+			Vector2D operator/(float );
 
 			/**
 			 *	Adds the given vector to this vector.
@@ -410,7 +410,7 @@ namespace AuroraFW {
 
 		inline bool Vector2D::isNull() const
 		{
-			return x == NAN || y == NAN;
+			return std::isnan(x) || std::isnan(y);
 		}
 	}
 }
