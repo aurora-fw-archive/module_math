@@ -60,8 +60,8 @@ namespace AuroraFW {
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param x The x value for the x coordinate.
 			 * 	@param y The y value for the y coordinate.
+			 *	@see Vector2D( )
 			 *	@see Vector2D(float )
-			 *	@see Vector2D(float , float )
 			 */
 			Vector2D(float , float );
 			/**
@@ -294,14 +294,14 @@ namespace AuroraFW {
 
 			/**
 			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
+			 *	and returns true if all the coordinates from this vector
 			 * 	are lower than the coordinates from the given one.
 			 * 	@see operator>()
 			 */
 			bool operator<(const Vector2D& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
+			 *	and returns true if all the coordinates from this vector
 			 *	are lower or equal than the coordinates from the
 			 *	given one.
 			 * 	@see operator>=()
@@ -309,14 +309,14 @@ namespace AuroraFW {
 			bool operator<=(const Vector2D& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
+			 *	and returns true if all the coordinates from this vector
 			 *	are bigger than the coordinates from the given one
 			 * 	@see operator<()
 			 */
 			bool operator>(const Vector2D& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
+			 *	and returns true if all the coordinates from this vector
 			 *	are bigger or equal than the coordinates from the
 			 *	given one
 			 * 	@see operator<=()
