@@ -122,7 +122,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        // Using an x and y value
+        // Using an x, y and z value
         Vector3D& Vector3D::add(float valX, float valY, float valZ)
         {
             x += valX;
