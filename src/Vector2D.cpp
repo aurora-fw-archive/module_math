@@ -27,11 +27,11 @@ namespace AuroraFW {
 			: x(0.0f), y(0.0f)
 		{}
 
-		Vector2D::Vector2D(float scalar)
+		Vector2D::Vector2D(const float& scalar)
 			: x(scalar), y(scalar)
 		{}
 
-		Vector2D::Vector2D(float x, float y)
+		Vector2D::Vector2D(const float& x, const float& y)
 			: x(x), y(y)
 		{}
 
@@ -78,7 +78,7 @@ namespace AuroraFW {
 		}
 
 		// Using a value (scalar)
-		Vector2D& Vector2D::add(float val)
+		Vector2D& Vector2D::add(const float& val)
 		{
 			x += val;
 			y += val;
@@ -86,7 +86,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::subtract(float val)
+		Vector2D& Vector2D::subtract(const float& val)
 		{
 			x -= val;
 			y -= val;
@@ -94,7 +94,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::multiply(float val)
+		Vector2D& Vector2D::multiply(const float& val)
 		{
 			x *= val;
 			y *= val;
@@ -102,7 +102,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::divide(float val)
+		Vector2D& Vector2D::divide(const float& val)
 		{
 			x /= val;
 			y /= val;
@@ -111,7 +111,7 @@ namespace AuroraFW {
 		}
 
 		// Using an x and y value
-		Vector2D& Vector2D::add(float valX, float valY)
+		Vector2D& Vector2D::add(const float& valX, const float& valY)
 		{
 			x += valX;
 			y += valY;
@@ -119,7 +119,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::subtract(float valX, float valY)
+		Vector2D& Vector2D::subtract(const float& valX, const float& valY)
 		{
 			x -= valX;
 			y -= valY;
@@ -127,7 +127,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::multiply(float valX, float valY)
+		Vector2D& Vector2D::multiply(const float& valX, const float& valY)
 		{
 			x *= valX;
 			y *= valY;
@@ -135,7 +135,7 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		Vector2D& Vector2D::divide(float valX, float valY)
+		Vector2D& Vector2D::divide(const float& valX, const float& valY)
 		{
 			x /= valX;
 			y /= valY;
@@ -143,11 +143,11 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		void Vector2D::setX(float val) {
+		void Vector2D::setX(const float& val) {
 			x = val;
 		}
 
-		void Vector2D::setY(float val) {
+		void Vector2D::setY(const float& val) {
 			y = val;
 		}
 
@@ -172,22 +172,22 @@ namespace AuroraFW {
 			return divide(right);
 		}
 
-		Vector2D Vector2D::operator+(float value)
+		Vector2D Vector2D::operator+(const float& value)
 		{
 			return Vector2D(x + value, y + value);
 		}
 
-		Vector2D Vector2D::operator-(float value)
+		Vector2D Vector2D::operator-(const float& value)
 		{
 			return Vector2D(x - value, y - value);
 		}
 
-		Vector2D Vector2D::operator*(float value)
+		Vector2D Vector2D::operator*(const float& value)
 		{
 			return Vector2D(x * value, y * value);
 		}
 
-		Vector2D Vector2D::operator/(float value)
+		Vector2D Vector2D::operator/(const float& value)
 		{
 			return Vector2D(x / value, y / value);
 		}
@@ -212,22 +212,22 @@ namespace AuroraFW {
 			return divide(other);
 		}
 
-		Vector2D& Vector2D::operator+=(float value)
+		Vector2D& Vector2D::operator+=(const float& value)
 		{
 			return add(value);
 		}
 
-		Vector2D& Vector2D::operator-=(float value)
+		Vector2D& Vector2D::operator-=(const float& value)
 		{
 			return subtract(value);
 		}
 
-		Vector2D& Vector2D::operator*=(float value)
+		Vector2D& Vector2D::operator*=(const float& value)
 		{
 			return multiply(value);
 		}
 
-		Vector2D& Vector2D::operator/=(float value)
+		Vector2D& Vector2D::operator/=(const float& value)
 		{
 			return divide(value);
 		}

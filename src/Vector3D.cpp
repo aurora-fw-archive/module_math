@@ -27,15 +27,15 @@ namespace AuroraFW {
         : x(0.0f), y(0.0f), z(0.0f)
         {}
 
-        Vector3D::Vector3D(float scalar)
+        Vector3D::Vector3D(const float& scalar)
             : x(scalar), y(scalar), z(scalar)
         {}
 
-        Vector3D::Vector3D(float x, float y)
+        Vector3D::Vector3D(const float& x, const float& y)
             : x(x), y(y), z(0.0f)
         {}
 
-        Vector3D::Vector3D(float x, float y, float z)
+        Vector3D::Vector3D(const float& x, const float& y, const float& z)
             : x(x), y(y), z(z)
         {}
 
@@ -86,7 +86,7 @@ namespace AuroraFW {
         }
 
         // Using a value (scalar)
-        Vector3D& Vector3D::add(float val)
+        Vector3D& Vector3D::add(const float& val)
         {
             x += val;
             y += val;
@@ -95,7 +95,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::subtract(float val)
+        Vector3D& Vector3D::subtract(const float& val)
         {
             x -= val;
             y -= val;
@@ -104,7 +104,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::multiply(float val)
+        Vector3D& Vector3D::multiply(const float& val)
         {
             x *= val;
             y *= val;
@@ -113,7 +113,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::divide(float val)
+        Vector3D& Vector3D::divide(const float& val)
         {
             x /= val;
             y /= val;
@@ -123,7 +123,7 @@ namespace AuroraFW {
         }
 
         // Using an x, y and z value
-        Vector3D& Vector3D::add(float valX, float valY, float valZ)
+        Vector3D& Vector3D::add(const float& valX, const float& valY, const float& valZ)
         {
             x += valX;
             y += valY;
@@ -132,7 +132,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::subtract(float valX, float valY, float valZ)
+        Vector3D& Vector3D::subtract(const float& valX, const float& valY, const float& valZ)
         {
             x -= valX;
             y -= valY;
@@ -141,7 +141,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::multiply(float valX, float valY, float valZ)
+        Vector3D& Vector3D::multiply(const float& valX, const float& valY, const float& valZ)
         {
             x *= valX;
             y *= valY;
@@ -150,7 +150,7 @@ namespace AuroraFW {
             return *this;
         }
 
-        Vector3D& Vector3D::divide(float valX, float valY, float valZ)
+        Vector3D& Vector3D::divide(const float& valX, const float& valY, const float& valZ)
         {
             x /= valX;
             y /= valY;
@@ -159,17 +159,17 @@ namespace AuroraFW {
             return *this;
         }
 
-        void Vector3D::setX(float val)
+        void Vector3D::setX(const float& val)
         {
             x = val;
         }
 
-        void Vector3D::setY(float val)
+        void Vector3D::setY(const float& val)
         {
             y = val;
         }
 
-        void Vector3D::setZ(float val)
+        void Vector3D::setZ(const float& val)
         {
             z = val;
         }
@@ -195,22 +195,22 @@ namespace AuroraFW {
             return divide(right);
         }
 
-        Vector3D Vector3D::operator+(float value)
+        Vector3D Vector3D::operator+(const float& value)
         {
             return Vector3D(x + value, y + value, z + value);
         }
 
-        Vector3D Vector3D::operator-(float value)
+        Vector3D Vector3D::operator-(const float& value)
         {
             return Vector3D(x - value, y - value, z - value);
         }
 
-        Vector3D Vector3D::operator*(float value)
+        Vector3D Vector3D::operator*(const float& value)
         {
             return Vector3D(x * value, y * value, z * value);
         }
 
-        Vector3D Vector3D::operator/(float value)
+        Vector3D Vector3D::operator/(const float& value)
         {
             return Vector3D(x / value, y / value, z / value);
         }
@@ -235,22 +235,22 @@ namespace AuroraFW {
             return divide(other);
         }
 
-        Vector3D& Vector3D::operator+=(float value)
+        Vector3D& Vector3D::operator+=(const float& value)
         {
             return add(value);
         }
 
-        Vector3D& Vector3D::operator-=(float value)
+        Vector3D& Vector3D::operator-=(const float& value)
         {
             return subtract(value);
         }
 
-        Vector3D& Vector3D::operator*=(float value)
+        Vector3D& Vector3D::operator*=(const float& value)
         {
             return multiply(value);
         }
 
-        Vector3D& Vector3D::operator/=(float value)
+        Vector3D& Vector3D::operator/=(const float& value)
         {
             return divide(value);
         }

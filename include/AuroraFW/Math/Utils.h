@@ -23,19 +23,19 @@
 
 namespace AuroraFW {
 	namespace Math {
-		AFW_PREFIX inline float toRadians(float deg) { return (float)(deg * (AFW_PI / 180.0f)); }
-		AFW_PREFIX inline float toDegrees(float rad) { return (float)(rad  * (180.0f / AFW_PI)); }
+		AFW_PREFIX inline float toRadians(const float& deg) { return (float)(deg * (AFW_PI / 180.0f)); }
+		AFW_PREFIX inline float toDegrees(const float& rad) { return (float)(rad  * (180.0f / AFW_PI)); }
 
-		AFW_PREFIX inline float sin(float a) { return ::sin(a); }
-		AFW_PREFIX inline float cos(float a) { return ::cos(a); }
-		AFW_PREFIX inline float tan(float a) { return ::tan(a); }
-		AFW_PREFIX inline float asin(float v) { return ::asin(v); }
-		AFW_PREFIX inline float acos(float v) { return ::acos(v); }
-		AFW_PREFIX inline float atan(float v) {reutnr ::atan(v); }
+		AFW_PREFIX inline float sin(const float& a) { return ::sin(a); }
+		AFW_PREFIX inline float cos(const float& a) { return ::cos(a); }
+		AFW_PREFIX inline float tan(const float& a) { return ::tan(a); }
+		AFW_PREFIX inline float asin(const float& v) { return ::asin(v); }
+		AFW_PREFIX inline float acos(const float& v) { return ::acos(v); }
+		AFW_PREFIX inline float atan(const float& v) {reutnr ::atan(v); }
 
-		AFW_PREFIX inline float min(float val, float min) { return (val < min) ? min : val; }
-		AFW_PREFIX inline float max(float val, float max) { return (val > max) ? max : val; }
-		AFW_PREFIX inline float clamp(float val, float min, float max) { return (val > min) ? (val < max) ? val : max : min; }
+		AFW_PREFIX inline float min(const float& val, const float& min) { return (val < min) ? min : val; }
+		AFW_PREFIX inline float max(const float& val, const float& max) { return (val > max) ? max : val; }
+		AFW_PREFIX inline float clamp(const float& val, const float& min, const float& max) { return (val > min) ? (val < max) ? val : max : min; }
 	}
 }
 

@@ -25,13 +25,13 @@
 
 namespace AuroraFW {
 	namespace Math {
-		struct vec3;
+		struct Vector3D;
 
 		struct AFW_PREFIX Vector4D {
 			Vector4D();
-			Vector4D(float );
-			Vector4D(float , float , float , float );
-			Vector4D(const vec3& , float );
+			Vector4D(const float& );
+			Vector4D(const float& , const float& , const float& , const float& );
+			Vector4D(const Vector3D& , const float& );
 
 			Vector4D& Add(const Vector4D& );
 			Vector4D& Subtract(const Vector4D& );

@@ -40,39 +40,39 @@ namespace AuroraFW {
 		struct AFW_PREFIX Vector3D {
 			/**
 			 *	Constructs a vector with zero coordinates.
-			 *	@see Vector3D(float )
-			 *	@see Vector3D(float , float )
-			 *	@see Vector3d(float , float , float )
+			 *	@see Vector3D(const float& )
+			 *	@see Vector3D(const float& , const float& )
+			 *	@see Vector3d(const float& , const float& , const float& )
 			 */
 			Vector3D();
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param scalar The float value to the x, y and z coordinates.
 			 *	@see Vector3D()
-			 *	@see Vector3D(float , float )
-			 *	@see Vector3D(float , float , float )
+			 *	@see Vector3D(const float& , const float& )
+			 *	@see Vector3D(const float& , const float& , const float& )
 			 */
-			Vector3D(float );
+			Vector3D(const float& );
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 *	The z value will be defined to 0.
 			 * 	@param x The x value for the x coordinate.
 			 * 	@param y The y value for the y coordinate.
 			 *	@see Vector3D( )
-			 *	@see Vector3D(float )
-			 *	@see Vector3D(float , float , float )
+			 *	@see Vector3D(const float& )
+			 *	@see Vector3D(const float& , const float& , const float& )
 			 */
-			Vector3D(float , float );
+			Vector3D(const float& , const float& );
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param x The x value for the x coordinate.
 			 * 	@param y The y value for the y coordinate.
 			 *	@param x The z value for the z coordinate.
 			 *	@see Vector3D( )
-			 *	@see Vector3D(float )
-			 *	@see Vector3D(float , float )
+			 *	@see Vector3D(const float& )
+			 *	@see Vector3D(const float& , const float& )
 			 */
-			Vector3D(float , float , float );
+			Vector3D(const float& , const float& , const float& );
 			/**
 			 *	Constructs a vector using the coordinates from the given Vector2D.
 			 *	The z value will be defined as 0.
@@ -92,32 +92,32 @@ namespace AuroraFW {
 			 *	Adds the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(float )
-			 * 	@see add(float , float , float )
+			 *	@see add(const float& )
+			 * 	@see add(const float& , const float& , const float& )
 			 */
 			Vector3D& add(const Vector3D& );
 			/**
 			 *	Subtracts the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(float )
-			 * 	@see subtract(float , float , float )
+			 *	@see subtract(const float& )
+			 * 	@see subtract(const float& , const float& , const float& )
 			 */
 			Vector3D& subtract(const Vector3D& );
 			/**
 			 *	Multiplies the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(float )
-			 * 	@see multiply(float , float , float )
+			 *	@see multiply(const float& )
+			 * 	@see multiply(const float& , const float& , const float& )
 			 */
 			Vector3D& multiply(const Vector3D& );
 			/**
 			 *	Divides the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(float )
-			 * 	@see divide(float , float , float )
+			 *	@see divide(const float& )
+			 * 	@see divide(const float& , const float& , const float& )
 			 */
 			Vector3D& divide(const Vector3D& );
 
@@ -126,33 +126,33 @@ namespace AuroraFW {
 			 *	@param val The value for all three coordinates.
 			 *	@return This vector with the added coordinates.
 			 *	@see add(const Vector3D& )
-			 * 	@see add(float , float , float )
+			 * 	@see add(const float& , const float& , const float& )
 			 */
-			Vector3D& add(float );
+			Vector3D& add(const float& );
 			/**
 			 *	Subtracts the given value to this vector.
 			 *	@param val The value for all three coordinates.
 			 *	@return This vector with the subtracted coordinates.
 			 *	@see subtract(const Vector3D& )
-			 * 	@see subtract(float , float , float )
+			 * 	@see subtract(const float& , const float& , const float& )
 			 */
-			Vector3D& subtract(float );
+			Vector3D& subtract(const float& );
 			/**
 			 *	Multiplies the given value to this vector.
 			 *	@param val The value for all three coordinates.
 			 *	@return This vector with the multiplied coordinates.
 			 *	@see multiply(const Vector3D& )
-			 * 	@see multiply(float , float , float )
+			 * 	@see multiply(const float& , const float& , const float& )
 			 */
-			Vector3D& multiply(float );
+			Vector3D& multiply(const float& );
 			/**
 			 *	Divides the given value to this vector.
 			 *	@param val The value for all three coordinates.
 			 *	@return This vector with the divided coordinates.
 			 *	@see divide(const Vector3D& )
-			 * 	@see divide(float , float , float )
+			 * 	@see divide(const float& , const float& , const float& )
 			 */
-			Vector3D& divide(float );
+			Vector3D& divide(const float& );
 
 			/**
 			 *	Adds the given values to this vector.
@@ -161,9 +161,9 @@ namespace AuroraFW {
 			 *	@param valZ The value for the z coordinate.
 			 *	@return This vector with the added coordinates.
 			 *	@see add(const Vector3D& )
-			 * 	@see add(float )
+			 * 	@see add(const float& )
 			 */
-			Vector3D& add(float , float , float );
+			Vector3D& add(const float& , const float& , const float& );
 			/**
 			 *	Subtracts the given values to this vector.
 			 *	@param valX The value for the x coordinate.
@@ -171,9 +171,9 @@ namespace AuroraFW {
 			 *	@param valZ The value for the z coordinate.
 			 *	@return This vector with the subtracted coordinates.
 			 *	@see subtract(const Vector3D& )
-			 * 	@see subtract(float )
+			 * 	@see subtract(const float& )
 			 */
-			Vector3D& subtract(float , float , float );
+			Vector3D& subtract(const float& , const float& , const float& );
 			/**
 			 *	Multiplies the given values to this vector.
 			 *	@param valX The value for the x coordinate.
@@ -181,9 +181,9 @@ namespace AuroraFW {
 			 *	@param valZ The value for the z coordinate.
 			 *	@return This vector with the multiplied coordinates.
 			 *	@see multiply(const Vector3D& )
-			 * 	@see multiply(float )
+			 * 	@see multiply(const float& )
 			 */
-			Vector3D& multiply(float , float , float );
+			Vector3D& multiply(const float& , const float& , const float& );
 			/**
 			 *	Divides the given values to this vector.
 			 *	@param valX The value for the x coordinate.
@@ -191,73 +191,73 @@ namespace AuroraFW {
 			 *	@param valZ The value for the z coordinate.
 			 *	@return This vector with the divided coordinates.
 			 *	@see divide(const Vector3D& )
-			 * 	@see divide(float )
+			 * 	@see divide(const float& )
 			 */
-			Vector3D& divide(float , float , float );
+			Vector3D& divide(const float& , const float& , const float& );
 
 			/**
 			 *	Sets the x coordinate to the given value.
 			 * 	@param val The value of the x coordinate.
-			 * 	@see setY(float )
-			 * 	@see setZ(float )
+			 * 	@see setY(const float& )
+			 * 	@see setZ(const float& )
 			 */
-			void setX(float );
+			void setX(const float& );
 			/**
 			 *	Sets the y coordinate to the given value.
 			 * 	@param val The value of the y coordinate.
-			 * 	@see setX(float )
-			 *	@see setZ(float )
+			 * 	@see setX(const float& )
+			 *	@see setZ(const float& )
 			 */
-			void setY(float );
+			void setY(const float& );
 			/**
 			 *	Sets the z coordinate to the given value.
 			 * 	@param val The value of the z coordinate.
-			 *	@see setX(float )
-			 * 	@see setY(float )
+			 *	@see setX(const float& )
+			 * 	@see setY(const float& )
 			 */
-			void setZ(float );
+			void setZ(const float& );
 
 			/**
 			 *	Adds the right vector's coordinates to the left one.
-			 *	@see operator-(Vector3D, const Vector3D& )
+			 *	@see operator-(const Vector3D& )
 			 */
 			Vector3D operator+(const Vector3D& );
 			/**
 			 *  Subtracts the right vector's coordinates to the left one.
-			 *	@see operator+(Vector3D, const Vector3D& )
+			 *	@see operator+(const Vector3D& )
 			 */
 			Vector3D operator-(const Vector3D& );
 			/**
 			 *	Multiplies the left vector's coordinates with the right vector.
-			 *	@see operator/(Vector3D, const Vector3D& )
+			 *	@see operator/(const Vector3D& )
 			 */
 			Vector3D operator*(const Vector3D& );
 			/**
 			 *	Divides the left vector's coordinates with the right vector.
-			 *	@see operator*(Vector3D, const Vector3D& )
+			 *	@see operator*(const Vector3D& )
 			 */
 			Vector3D operator/(const Vector3D& );
 
 			/**
 			 *	Adds the given value to the vector.
-			 *	@see operator-(Vector3D , float )
+			 *	@see operator-(const float& )
 			 */
-			Vector3D operator+(float );
+			Vector3D operator+(const float& );
 			/**
 			 *	Subtracts the given value to the vector.
-			 *	@see operator+(Vector3D , float )
+			 *	@see operator+(const float& )
 			 */
-			Vector3D operator-(float );
+			Vector3D operator-(const float& );
 			/**
 			 *	Multiplies vector with the given value.
-			 *	@see operator/(Vector3D , float )
+			 *	@see operator/(const float& )
 			 */
-			Vector3D operator*(float );
+			Vector3D operator*(const float& );
 			/**
 			 *	Divides vector with the given value.
-			 *	@see operator*(Vector3D , float )
+			 *	@see operator*(const float& )
 			 */
-			Vector3D operator/(float );
+			Vector3D operator/(const float& );
 
 			/**
 			 *	Adds the given vector to this vector.
@@ -282,24 +282,24 @@ namespace AuroraFW {
 
 			/**
 			 *	Adds the given value to this vector.
-			 *	@see operator-=(float )
+			 *	@see operator-=(const float& )
 			 */
-			Vector3D& operator+=(float );
+			Vector3D& operator+=(const float& );
 			/**
 			 *	Subtracts the given value to this vector.
-			 *	@see operator+=(float )
+			 *	@see operator+=(const float& )
 			 */
-			Vector3D& operator-=(float );
+			Vector3D& operator-=(const float& );
 			/**
 			 *	Multiplies this vector by the given value.
-			 *	@see operator/=(float )
+			 *	@see operator/=(const float& )
 			 */
-			Vector3D& operator*=(float );
+			Vector3D& operator*=(const float& );
 			/**
 			 *	Divides this vector by the given value.
-			 *	@see operator*=(float )
+			 *	@see operator*=(const float& )
 			 */
-			Vector3D& operator/=(float );
+			Vector3D& operator/=(const float& );
 
 			/**
 			 *	Compares this vector's coordinates with the given one
