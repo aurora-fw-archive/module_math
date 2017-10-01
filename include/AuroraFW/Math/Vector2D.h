@@ -17,12 +17,12 @@
 ****************************************************************************/
 
 /** @file AuroraFW/Math/Vector2D.h
- * 2D Vector/Vertex Header. This contains a Vector2D struct that
+ * 2D Vector/Vertex Header. This contains a vec2 struct that
  * represents a vector or vertex in 2D space.
  */
 
-#ifndef AURORAFW_MATH_2DVECTOR_H
-#define AURORAFW_MATH_2DVECTOR_H
+#ifndef AURORAFW_MATH_VECTOR2D_H
+#define AURORAFW_MATH_VECTOR2D_H
 
 #include <AuroraFW/Global.h>
 
@@ -35,262 +35,263 @@
 
 namespace AuroraFW {
 	namespace Math {
-		struct Vector3D;
-        struct Vector4D;
+		template<typename T> struct vec3;
+		template<typename T> struct vec4;
 		/**
 		 *	A struct that represents a 2D vector. A struct that store's
 		 * 	position in 2D coordinates, allows to manipulate them and also
 		 * 	to do vector operations.
 		 */
-		struct AFW_PREFIX Vector2D {
+		template<typename T>
+		struct AFW_PREFIX vec2 {
 			/**
 			 *	Constructs a vector with zero coordinates.
-			 *	@see Vector2D(const float& )
-			 *	@see Vector2D(const float& , const float& )
+			 *	@see vec2(const T& )
+			 *	@see vec2(const T& , const T& )
 			 */
-			Vector2D();
+			vec2();
 			/**
 			 *	Constructs a vector with the given coordinates.
-			 * 	@param scalar The float value to both x and y coordinates.
-			 *	@see Vector2D()
-			 *	@see Vector2D(const float& , const float& )
+			 * 	@param scalar The T value to both x and y coordinates.
+			 *	@see vec2()
+			 *	@see vec2(const T& , const T& )
 			 */
-			Vector2D(const float& );
+			vec2(const T& );
 			/**
 			 *	Constructs a vector with the given coordinates.
 			 * 	@param x The x value for the x coordinate.
 			 * 	@param y The y value for the y coordinate.
-			 *	@see Vector2D( )
-			 *	@see Vector2D(const float& )
+			 *	@see vec2( )
+			 *	@see vec2(const T& )
 			 */
-			Vector2D(const float& , const float& );
+			vec2(const T& , const T& );
 			/**
 			 *	Constructs a vector using the coordinates from the given Vector3D.
 			 *	The z value is not used.
 			 *	@param v The Vector3D to get both the x and y coordinates from.
-			 *	@see Vector2D(const Vector4D& )
+			 *	@see vec2(const Vector4D& )
 			 */
-			explicit Vector2D(const Vector3D& );
+			explicit vec2(const vec3<T>& );
 			/**
 			 *	Construct a vector using the coordinates from the given Vector4D.
 			 *	The z and w values are not used.
 			 *	@param v The Vector4D to get both the x and y coordinates from.
-			 *	@see Vector2D(const Vector3D& )
+			 *	@see vec2(const Vector3D& )
 			 */
-            explicit Vector2D(const Vector4D& );
+            explicit vec2(const vec4<T>& );
 
 			/**
 			 *	Adds the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(const float& )
-			 * 	@see add(const float& , const float& )
+			 *	@see add(const T& )
+			 * 	@see add(const T& , const T& )
 			 */
-			Vector2D& add(const Vector2D& );
+			vec2& add(const vec2<T>& );
 			/**
 			 *	Subtracts the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const float& )
-			 * 	@see subtract(const float& , const float& )
+			 *	@see subtract(const T& )
+			 * 	@see subtract(const T& , const T& )
 			 */
-			Vector2D& subtract(const Vector2D& );
+			vec2& subtract(const vec2<T>& );
 			/**
 			 *	Multiplies the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const float& )
-			 * 	@see multiply(const float& , const float& )
+			 *	@see multiply(const T& )
+			 * 	@see multiply(const T& , const T& )
 			 */
-			Vector2D& multiply(const Vector2D& );
+			vec2& multiply(const vec2<T>& );
 			/**
 			 *	Divides the given vector's coordinates to this vector.
 			 *	@param v The vector to get the coordinates from.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const float& )
-			 * 	@see divide(const float& , const float& )
+			 *	@see divide(const T& )
+			 * 	@see divide(const T& , const T& )
 			 */
-			Vector2D& divide(const Vector2D& );
+			vec2& divide(const vec2<T>& );
 
 			/**
 			 *	Adds the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(const Vector2D& )
-			 * 	@see add(const float& , const float& )
+			 *	@see add(const vec2& )
+			 * 	@see add(const T& , const T& )
 			 */
-			Vector2D& add(const float& );
+			vec2& add(const T& );
 			/**
 			 *	Subtracts the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const Vector2D& )
-			 * 	@see subtract(const float&& , const float&& )
+			 *	@see subtract(const vec2& )
+			 * 	@see subtract(const T&& , const T&& )
 			 */
-			Vector2D& subtract(const float& );
+			vec2& subtract(const T& );
 			/**
 			 *	Multiplies the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const Vector2D& )
-			 * 	@see multiply(const float& , const float& )
+			 *	@see multiply(const vec2& )
+			 * 	@see multiply(const T& , const T& )
 			 */
-			Vector2D& multiply(const float& );
+			vec2& multiply(const T& );
 			/**
 			 *	Divides the given value to this vector.
 			 *	@param val The value for both coordinates.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const Vector2D& )
-			 * 	@see divide(const float& , const float& )
+			 *	@see divide(const vec2& )
+			 * 	@see divide(const T& , const T& )
 			 */
-			Vector2D& divide(const float& );
+			vec2& divide(const T& );
 
 			/**
 			 *	Adds the given values to this vector.
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the added coordinates.
-			 *	@see add(const Vector2D& )
-			 * 	@see add(const float& )
+			 *	@see add(const vec2& )
+			 * 	@see add(const T& )
 			 */
-			Vector2D& add(const float& , const float& );
+			vec2& add(const T& , const T& );
 			/**
 			 *	Subtracts the given values to this vector.
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const Vector2D& )
-			 * 	@see subtract(const float& )
+			 *	@see subtract(const vec2& )
+			 * 	@see subtract(const T& )
 			 */
-			Vector2D& subtract(const float&, const float& );
+			vec2& subtract(const T&, const T& );
 			/**
 			 *	Multiplies the given values to this vector.
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const Vector2D& )
-			 * 	@see multiply(const float& )
+			 *	@see multiply(const vec2& )
+			 * 	@see multiply(const T& )
 			 */
-			Vector2D& multiply(const float& , const float& );
+			vec2& multiply(const T& , const T& );
 			/**
 			 *	Divides the given values to this vector.
 			 *	@param valX The value for the x coordinate.
 			 * 	@param valY The value for the y coordinate.
 			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const Vector2D& )
-			 * 	@see divide(const float& )
+			 *	@see divide(const vec2& )
+			 * 	@see divide(const T& )
 			 */
-			Vector2D& divide(const float& , const float& );
+			vec2& divide(const T& , const T& );
 
 			/**
 			 *	Sets the x coordinate to the given value.
 			 * 	@param val The value of the x coordinate.
-			 * 	@see setY(const float& )
+			 * 	@see setY(const T& )
 			 */
-			void setX(const float& );
+			void setX(const T& );
 			/**
 			 *	Sets the y coordinate to the given value.
 			 *	@param val The value of the y coordinate.
-			 *	@see setX(const float& )
+			 *	@see setX(const T& )
 			 */
-            void setY(const float& );
+            void setY(const T& );
 
 			/**
 			 *	Adds the right vector's coordinates to the left one.
-			 *	@see operator-(const Vector2D& )
+			 *	@see operator-(const vec2& )
 			 */
-			Vector2D operator+(const Vector2D& );
+			vec2<T> operator+(const vec2<T>& );
 			/**
 			 *  Subtracts the right vector's coordinates to the left one.
-			 *	@see operator+(const Vector2D& )
+			 *	@see operator+(const vec2& )
 			 */
-			Vector2D operator-(const Vector2D& );
+			vec2<T> operator-(const vec2<T>& );
 			/**
 			 *	Multiplies the left vector's coordinates with the right vector.
-			 *	@see operator/(const Vector2D& )
+			 *	@see operator/(const vec2& )
 			 */
-			Vector2D operator*(const Vector2D& );
+			vec2<T> operator*(const vec2<T>& );
 			/**
 			 *	Divides the left vector's coordinates with the right vector.
-			 *	@see operator*(const Vector2D& )
+			 *	@see operator*(const vec2& )
 			 */
-			Vector2D operator/(const Vector2D& );
+			vec2<T> operator/(const vec2<T>& );
 
 			/**
 			 *	Adds the given value to the vector.
-			 *	@see operator-(const float& )
+			 *	@see operator-(const T& )
 			 */
-			Vector2D operator+(const float& );
+			vec2<T> operator+(const T& );
 			/**
 			 *	Subtracts the given value to the vector.
-			 *	@see operator+(const float& )
+			 *	@see operator+(const T& )
 			 */
-			Vector2D operator-(const float& );
+			vec2<T> operator-(const T& );
 			/**
 			 *	Multiplies vector with the given value.
-			 *	@see operator/(const float& )
+			 *	@see operator/(const T& )
 			 */
-			Vector2D operator*(const float& );
+			vec2<T> operator*(const T& );
 			/**
 			 *	Divides vector with the given value.
-			 *	@see operator*(const float& )
+			 *	@see operator*(const T& )
 			 */
-			Vector2D operator/(const float& );
+			vec2<T> operator/(const T& );
 
 			/**
 			 *	Adds the given vector to this vector.
-			 *	@see operator-=(const Vector2D& )
+			 *	@see operator-=(const vec2& )
 			 */
-			Vector2D& operator+=(const Vector2D& );
+			vec2<T>& operator+=(const vec2<T>& );
 			/**
 			 *	Subtracts the given vector to this vector.
-			 *	@see operator+=(const Vector2D& )
+			 *	@see operator+=(const vec2& )
 			 */
-			Vector2D& operator-=(const Vector2D& );
+			vec2<T>& operator-=(const vec2<T>& );
 			/**
 			 *	Multiplies this vector by the given vector.
-			 *	@see operator/=(const Vector2D& )
+			 *	@see operator/=(const vec2& )
 			 */
-			Vector2D& operator*=(const Vector2D& );
+			vec2<T>& operator*=(const vec2<T>& );
 			/**
 			 *	Divides this vector by the given vector.
-			 *	@see operator*=(const Vector2D& )
+			 *	@see operator*=(const vec2& )
 			 */
-			Vector2D& operator/=(const Vector2D& );
+			vec2<T>& operator/=(const vec2<T>& );
 
 			/**
 			 *	Adds the given value to this vector.
-			 *	@see operator-=(const float& )
+			 *	@see operator-=(const T& )
 			 */
-			Vector2D& operator+=(const float& );
+			vec2<T>& operator+=(const T& );
 			/**
 			 *	Subtracts the given value to this vector.
-			 *	@see operator+=(const float& )
+			 *	@see operator+=(const T& )
 			 */
-			Vector2D& operator-=(const float& );
+			vec2<T>& operator-=(const T& );
 			/**
 			 *	Multiplies this vector by the given value.
-			 *	@see operator/=(const float& )
+			 *	@see operator/=(const T& )
 			 */
-			Vector2D& operator*=(const float& );
+			vec2<T>& operator*=(const T& );
 			/**
 			 *	Divides this vector by the given value.
-			 *	@see operator*=(const float& )
+			 *	@see operator*=(const T& )
 			 */
-			Vector2D& operator/=(const float& );
+			vec2<T>& operator/=(const T& );
 
 			/**
 			 *	Compares this vector's coordinates with the given one
 			 *	and returns true if both coordinates are exactly equal.
 			 * 	@see operator!=()
 			 */
-			bool operator==(const Vector2D& ) const;
+			bool operator==(const vec2<T>& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
 			 *	and returns true if any of the coordinates are different.
 			 * 	@see operator==()
 			 */
-			bool operator!=(const Vector2D& ) const;
+			bool operator!=(const vec2<T>& ) const;
 
 			/**
 			 *	Compares this vector's coordinates with the given one
@@ -298,7 +299,7 @@ namespace AuroraFW {
 			 * 	are lower than the coordinates from the given one.
 			 * 	@see operator>()
 			 */
-			bool operator<(const Vector2D& ) const;
+			bool operator<(const vec2<T>& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
 			 *	and returns true if all the coordinates from this vector
@@ -306,14 +307,14 @@ namespace AuroraFW {
 			 *	given one.
 			 * 	@see operator>=()
 			 */
-			bool operator<=(const Vector2D& ) const;
+			bool operator<=(const vec2<T>& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
 			 *	and returns true if all the coordinates from this vector
 			 *	are bigger than the coordinates from the given one
 			 * 	@see operator<()
 			 */
-			bool operator>(const Vector2D& ) const;
+			bool operator>(const vec2<T>& ) const;
 			/**
 			 *	Compares this vector's coordinates with the given one
 			 *	and returns true if all the coordinates from this vector
@@ -321,20 +322,20 @@ namespace AuroraFW {
 			 *	given one
 			 * 	@see operator<=()
 			 */
-			bool operator>=(const Vector2D& ) const;
+			bool operator>=(const vec2<T>& ) const;
 
 			/**
 			 *	The exact same thing as length().
 			 *	@return The magnitude/length of this vector.
 			 * 	@see length()
 			 */
-			float magnitude() const;
+			T magnitude() const;
 			/**
 			 *	Returns the length of this vector.
 			 *	@return The magnitude/length of this vector.
 			 *	@see magnitude()
 			 */
-			float length() const;
+			T length() const;
 			/**
 			 *	Return true if any coordinate of this vector is null.
 			 *	@return True if any coordinate is NAN. False otherwhise.
@@ -353,14 +354,14 @@ namespace AuroraFW {
 			 *	@return Normalized vector with the angle of this one.
 			 * 	@see normalize()
 			 */
-			Vector2D normalized() const;
+			vec2<T> normalized() const;
 			/**
 			 *	Returns the value of the dot product between this
 			 *	vector and the given one.
 			 *	@param other The vector to dot product with this one.
 			 *	@return The dot product of the two vectors.
 			 */
-			float dot(const Vector2D& ) const;
+			T dot(const vec2<T>& ) const;
 			/**
 			 *	Returns the distance from this vector to a point, whose
 			 *	coordinates are on the given vector.
@@ -368,7 +369,7 @@ namespace AuroraFW {
 			 * 	@return Distance between this vector and the point.
 			 *	@see distanceToLine()
 			 */
-			float distanceToPoint(const Vector2D& ) const;
+			T distanceToPoint(const vec2<T>& ) const;
 			/**
 			 *	Returns the smallest distance from this vector to a line,
 			 * 	which is defined by a point and angle, provided by the
@@ -378,7 +379,7 @@ namespace AuroraFW {
 			 *	@return The smallest distance between this vector and the line.
 			 *	@see distanceToPoint()
 			 */
-            float distanceToLine(const Vector2D& , const Vector2D& ) const;
+            T distanceToLine(const vec2<T>& , const vec2<T>& ) const;
 
 			/**
 			 *	Returns the vector as a string.
@@ -388,31 +389,373 @@ namespace AuroraFW {
 			/**
 			 *	Returns the vector as a stream.
 			 */
-			friend std::ostream& operator<<(std::ostream& , const Vector2D& );
+			template<typename t>
+			friend std::ostream& operator<<(std::ostream& , const vec2<t>& );
 
 			/**
 			 *	The vector's x coordinate.
 			 * 	@see y
 			 */
-			float x;
+			T x;
 			/**
 			 *	The vector's y coordinate.
 			 *	@see x
 			 */
-			float y;
+			T y;
 		};
 
+		typedef vec2<float> Vector2D;
+
 		// Inline definitions
-		inline float Vector2D::magnitude() const
+		template<typename T>
+		inline T vec2<T>::magnitude() const
 		{
 			return length();
 		}
 
-		inline bool Vector2D::isNull() const
+		template<typename T>
+		inline bool vec2<T>::isNull() const
 		{
 			return std::isnan(x) || std::isnan(y);
+		}
+
+		// Template implementation
+		// Constructors
+		template<typename T>
+		vec2<T>::vec2()
+			: x(0.0f), y(0.0f)
+		{}
+
+		template<typename T>
+		vec2<T>::vec2(const T& scalar)
+			: x(scalar), y(scalar)
+		{}
+
+		template<typename T>
+		vec2<T>::vec2(const T& x, const T& y)
+			: x(x), y(y)
+		{}
+
+		template<typename T>
+		vec2<T>::vec2(const vec3<T>& v)
+			: x(v.x), y(v.y)
+		{}
+
+		template<typename T>
+		vec2<T>::vec2(const vec4<T>& v)
+			: x(v.x), y(v.y)
+		{}
+
+		// Operations
+		// Using an existing vec2
+		template<typename T>
+		vec2<T>& vec2<T>::add(const vec2<T>& v)
+		{
+			x += v.x;
+			y += v.y;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::subtract(const vec2<T>& v)
+		{
+			x -= v.x;
+			y -= v.y;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::multiply(const vec2<T>& v)
+		{
+			x *= v.x;
+			y *= v.y;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::divide(const vec2<T>& v)
+		{
+			x /= v.x;
+			y /= v.y;
+
+			return *this;
+		}
+
+		// Using a value (scalar)
+		template<typename T>
+		vec2<T>& vec2<T>::add(const T& val)
+		{
+			x += val;
+			y += val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::subtract(const T& val)
+		{
+			x -= val;
+			y -= val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::multiply(const T& val)
+		{
+			x *= val;
+			y *= val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::divide(const T& val)
+		{
+			x /= val;
+			y /= val;
+
+			return *this;
+		}
+
+		// Using an x and y value
+		template<typename T>
+		vec2<T>& vec2<T>::add(const T& valX, const T& valY)
+		{
+			x += valX;
+			y += valY;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::subtract(const T& valX, const T& valY)
+		{
+			x -= valX;
+			y -= valY;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::multiply(const T& valX, const T& valY)
+		{
+			x *= valX;
+			y *= valY;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::divide(const T& valX, const T& valY)
+		{
+			x /= valX;
+			y /= valY;
+
+			return *this;
+		}
+
+		template<typename T>
+		void vec2<T>::setX(const T& val) {
+			x = val;
+		}
+
+		template<typename T>
+		void vec2<T>::setY(const T& val) {
+			y = val;
+		}
+
+		// Operators
+		template<typename T>
+		vec2<T> vec2<T>::operator+(const vec2<T>& right)
+		{
+			return add(right);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator-(const vec2<T>& right)
+		{
+			return subtract(right);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator*(const vec2<T>& right)
+		{
+			return multiply(right);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator/(const vec2<T>& right)
+		{
+			return divide(right);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator+(const T& value)
+		{
+			return vec2<T>(x + value, y + value);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator-(const T& value)
+		{
+			return vec2<T>(x - value, y - value);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator*(const T& value)
+		{
+			return vec2<T>(x * value, y * value);
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::operator/(const T& value)
+		{
+			return vec2<T>(x / value, y / value);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator+=(const vec2<T>& other)
+		{
+			return add(other);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator-=(const vec2<T>& other)
+		{
+			return subtract(other);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator*=(const vec2<T>& other)
+		{
+			return multiply(other);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator/=(const vec2<T>& other)
+		{
+			return divide(other);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator+=(const T& value)
+		{
+			return add(value);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator-=(const T& value)
+		{
+			return subtract(value);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator*=(const T& value)
+		{
+			return multiply(value);
+		}
+
+		template<typename T>
+		vec2<T>& vec2<T>::operator/=(const T& value)
+		{
+			return divide(value);
+		}
+
+		template<typename T>
+		bool vec2<T>::operator==(const vec2<T>& other) const
+		{
+			return x == other.x && y == other.y;
+		}
+
+		template<typename T>
+		bool vec2<T>::operator!=(const vec2<T>& other) const
+		{
+			return !(*this == other);
+		}
+
+		template<typename T>
+		bool vec2<T>::operator<(const vec2<T>& other) const
+		{
+			return x < other.x && y < other.y;
+		}
+
+		template<typename T>
+		bool vec2<T>::operator<=(const vec2<T>& other) const
+		{
+			return x <= other.x && y <= other.y;
+		}
+
+		template<typename T>
+		bool vec2<T>::operator>(const vec2<T>& other) const
+		{
+			return x > other.x && y > other.y;
+		}
+
+		template<typename T>
+		bool vec2<T>::operator>=(const vec2<T>& other) const
+		{
+			return x >= other.x && y >= other.y;
+		}
+
+		// Vector operations
+		template<typename T>
+		T vec2<T>::length() const
+		{
+			return sqrt(x * x + y * y);
+		}
+
+		template<typename T>
+		void vec2<T>::normalize()
+		{
+			T length = magnitude();
+			this->x /= length;
+			this->y /= length;
+		}
+
+		template<typename T>
+		vec2<T> vec2<T>::normalized() const
+		{
+			T length = magnitude();
+			return vec2<T>(x / length, y / length);
+		}
+
+		template<typename T>
+		T vec2<T>::dot(const vec2<T>& other) const
+		{
+			return x * other.x + y * other.y;
+		}
+
+		template<typename T>
+		T vec2<T>::distanceToPoint(const vec2<T>& other) const
+		{
+			T a = x - other.x;
+			T b = y - other.y;
+			return sqrt(a * a + b * b);
+		}
+
+		template<typename T>
+		T vec2<T>::distanceToLine(const vec2<T>& point, const vec2<T>& direction) const
+		{
+			// TODO: Find the formula to get the distance
+		}
+
+		template<typename T>
+		std::string vec2<T>::toString() const
+		{
+			return "vec2<T>: (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+		}
+
+		template<typename T>
+		std::ostream& operator<<(std::ostream& stream, const vec2<T>& vector)
+		{
+			stream << vector.toString();
+			return stream;
 		}
 	}
 }
 
-#endif // AURORAFW_MATH_2DVECTOR_H
+#endif // AURORAFW_MATH_VECTOR2D_H

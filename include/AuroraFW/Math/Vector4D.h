@@ -16,8 +16,8 @@
 ** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
 ****************************************************************************/
 
-#ifndef AURORAFW_MATH_4DVECTOR_H
-#define AURORAFW_MATH_4DVECTOR_H
+#ifndef AURORAFW_MATH_VECTOR4D_H
+#define AURORAFW_MATH_VECTOR4D_H
 
 #include <AuroraFW/Global.h>
 
@@ -25,37 +25,38 @@
 
 namespace AuroraFW {
 	namespace Math {
-		struct Vector3D;
+		template<class T> struct vec3;
 
-		struct AFW_PREFIX Vector4D {
-			Vector4D();
-			Vector4D(const float& );
-			Vector4D(const float& , const float& , const float& , const float& );
-			Vector4D(const Vector3D& , const float& );
+		template<class T>
+		struct AFW_PREFIX vec4 {
+			vec4();
+			vec4(const T& );
+			vec4(const T& , const T& , const T& , const T& );
+			vec4(const vec3<T>& , const T& );
 
-			Vector4D& Add(const Vector4D& );
-			Vector4D& Subtract(const Vector4D& );
-			Vector4D& Multiply(const Vector4D& );
-			Vector4D& Divide(const Vector4D& );
+			vec4<T>& Add(const vec4<T>& );
+			vec4<T>& Subtract(const vec4<T>& );
+			vec4<T>& Multiply(const vec4<T>& );
+			vec4<T>& Divide(const vec4<T>& );
 
-			friend Vector4D operator+(Vector4D , const Vector4D& );
-			friend Vector4D operator-(Vector4D , const Vector4D& );
-			friend Vector4D operator*(Vector4D , const Vector4D& );
-			friend Vector4D operator/(Vector4D , const Vector4D& );
+			friend vec4<T> operator+(vec4<T> , const vec4<T>& );
+			friend vec4<T> operator-(vec4<T> , const vec4<T>& );
+			friend vec4<T> operator*(vec4<T> , const vec4<T>& );
+			friend vec4<T> operator/(vec4<T> , const vec4<T>& );
 
-			bool operator==(const Vector4D& ) const;
-			bool operator!=(const Vector4D& ) const;
+			bool operator==(const vec4<T>& ) const;
+			bool operator!=(const vec4<T>& ) const;
 
-			Vector4D& operator+=(const Vector4D& );
-			Vector4D& operator-=(const Vector4D& );
-			Vector4D& operator*=(const Vector4D& );
-			Vector4D& operator/=(const Vector4D& );
+			vec4<T>& operator+=(const vec4<T>& );
+			vec4<T>& operator-=(const vec4<T>& );
+			vec4<T>& operator*=(const vec4<T>& );
+			vec4<T>& operator/=(const vec4<T>& );
 
-			friend std::ostream& operator<<(std::ostream& , const Vector4D& );
+			friend std::ostream& operator<<(std::ostream& , const vec4<T>& );
 
-			float x, y, z, w;
+			T x, y, z, w;
 		};
 	}
 }
 
-#endif // AURORAFW_MATH_4DVECTOR_H
+#endif // AURORAFW_MATH_VECTOR4D_H
