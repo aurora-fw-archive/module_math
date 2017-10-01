@@ -3,7 +3,7 @@ project (aurorafw-module-math)
 
 message(STATUS "Starting framework build system...")
 
-include(${CMAKE_SOURCE_DIR}/build/config.cmake)
+include(${CMAKE_SOURCE_DIR}/build/aurora-config.cmake)
 set(AURORAFW_MODULE_MATH_DIR ${CMAKE_SOURCE_DIR})
 include(${CMAKE_SOURCE_DIR}/module.cmake)
 
