@@ -17,3 +17,9 @@
 ****************************************************************************/
 
 #include <AuroraFW/Math/Vector4D.h>
+
+namespace AuroraFW {
+	namespace Math {
+		template struct vec4<float>;
+	}
+}
