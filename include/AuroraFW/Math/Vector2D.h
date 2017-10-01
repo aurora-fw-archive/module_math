@@ -19,6 +19,7 @@
 /** @file AuroraFW/Math/Vector2D.h
  * 2D Vector/Vertex Header. This contains a vec2 struct that
  * represents a vector or vertex in 2D space.
+ * @since snapshot20190930
  */
 
 #ifndef AURORAFW_MATH_VECTOR2D_H
@@ -37,369 +38,410 @@ namespace AuroraFW {
 	namespace Math {
 		template<typename T> struct vec3;
 		template<typename T> struct vec4;
-		/**
-		 *	A struct that represents a 2D vector. A struct that store's
-		 * 	position in 2D coordinates, allows to manipulate them and also
-		 * 	to do vector operations.
+		
+		/** A struct that represents a 2D vector. A struct that store's
+		 * position in 2D coordinates, allows to manipulate them and also
+		 * to do vector operations.
+		 * @since snapshot20190930
 		 */
 		template<typename T>
 		struct AFW_PREFIX vec2 {
-			/**
-			 *	Constructs a vector with zero coordinates.
-			 *	@see vec2(const T& )
-			 *	@see vec2(const T& , const T& )
+			/** Constructs a vector with zero coordinates.
+			 * @see vec2(const T& )
+			 * @see vec2(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2();
-			/**
-			 *	Constructs a vector with the given coordinates.
-			 * 	@param scalar The T value to both x and y coordinates.
-			 *	@see vec2()
-			 *	@see vec2(const T& , const T& )
+
+			/** Constructs a vector with the given coordinates.
+			 * @param scalar The T value to both x and y coordinates.
+			 * @see vec2()
+			 * @see vec2(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2(const T& );
-			/**
-			 *	Constructs a vector with the given coordinates.
-			 * 	@param x The x value for the x coordinate.
-			 * 	@param y The y value for the y coordinate.
-			 *	@see vec2( )
-			 *	@see vec2(const T& )
+
+			/** Constructs a vector with the given coordinates.
+			 * @param x The x value for the x coordinate.
+			 * @param y The y value for the y coordinate.
+			 * @see vec2( )
+			 * @see vec2(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2(const T& , const T& );
-			/**
-			 *	Constructs a vector using the coordinates from the given Vector3D.
-			 *	The z value is not used.
-			 *	@param v The Vector3D to get both the x and y coordinates from.
-			 *	@see vec2(const Vector4D& )
+			
+			/** Constructs a vector using the coordinates from the given Vector3D.
+			 * The z value is not used.
+			 * @param v The vec3<T> to get both the x and y coordinates from.
+			 * @see vec2(const vec4<T>& )
+			 * @since snapshot20190930
 			 */
 			explicit vec2(const vec3<T>& );
-			/**
-			 *	Construct a vector using the coordinates from the given Vector4D.
-			 *	The z and w values are not used.
-			 *	@param v The Vector4D to get both the x and y coordinates from.
-			 *	@see vec2(const Vector3D& )
+
+			/** Construct a vector using the coordinates from the given Vector4D.
+			 * The z and w values are not used.
+			 * @param v The vec4<T> to get both the x and y coordinates from.
+			 * @see vec2(const vec3<T>& )
+			 * @since snapshot20190930
 			 */
             explicit vec2(const vec4<T>& );
 
-			/**
-			 *	Adds the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const T& )
-			 * 	@see add(const T& , const T& )
+			/** Adds the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the added coordinates.
+			 * @see add(const T& )
+			 * @see add(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& add(const vec2<T>& );
-			/**
-			 *	Subtracts the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const T& )
-			 * 	@see subtract(const T& , const T& )
+			
+			/** Subtracts the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const T& )
+			 * @see subtract(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& subtract(const vec2<T>& );
-			/**
-			 *	Multiplies the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const T& )
-			 * 	@see multiply(const T& , const T& )
+
+			/** Multiplies the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const T& )
+			 * @see multiply(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& multiply(const vec2<T>& );
-			/**
-			 *	Divides the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const T& )
-			 * 	@see divide(const T& , const T& )
+
+			/** Divides the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const T& )
+			 * @see divide(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& divide(const vec2<T>& );
 
-			/**
-			 *	Adds the given value to this vector.
-			 *	@param val The value for both coordinates.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const vec2& )
-			 * 	@see add(const T& , const T& )
+			/** Adds the given value to this vector.
+			 * @param val The value for both coordinates.
+			 * @return This vector with the added coordinates.
+			 * @see add(const vec2& )
+			 * @see add(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& add(const T& );
-			/**
-			 *	Subtracts the given value to this vector.
-			 *	@param val The value for both coordinates.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const vec2& )
-			 * 	@see subtract(const T&& , const T&& )
+
+			/** Subtracts the given value to this vector.
+			 * @param val The value for both coordinates.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const vec2& )
+			 * @see subtract(const T&& , const T&& )
+			 * @since snapshot20190930
 			 */
 			vec2& subtract(const T& );
+			
 			/**
-			 *	Multiplies the given value to this vector.
-			 *	@param val The value for both coordinates.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const vec2& )
-			 * 	@see multiply(const T& , const T& )
+			 * Multiplies the given value to this vector.
+			 * @param val The value for both coordinates.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const vec2& )
+			 * @see multiply(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& multiply(const T& );
-			/**
-			 *	Divides the given value to this vector.
-			 *	@param val The value for both coordinates.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const vec2& )
-			 * 	@see divide(const T& , const T& )
+			
+			/** Divides the given value to this vector.
+			 * @param val The value for both coordinates.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const vec2& )
+			 * @see divide(const T& , const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& divide(const T& );
 
-			/**
-			 *	Adds the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const vec2& )
-			 * 	@see add(const T& )
+			/** Adds the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @return This vector with the added coordinates.
+			 * @see add(const vec2& )
+			 * @see add(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& add(const T& , const T& );
-			/**
-			 *	Subtracts the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const vec2& )
-			 * 	@see subtract(const T& )
+
+			/** Subtracts the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const vec2& )
+			 * @see subtract(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& subtract(const T&, const T& );
-			/**
-			 *	Multiplies the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const vec2& )
-			 * 	@see multiply(const T& )
+
+			/** Multiplies the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const vec2& )
+			 * @see multiply(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& multiply(const T& , const T& );
-			/**
-			 *	Divides the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const vec2& )
-			 * 	@see divide(const T& )
+
+			/** Divides the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const vec2& )
+			 * @see divide(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2& divide(const T& , const T& );
 
-			/**
-			 *	Sets the x coordinate to the given value.
-			 * 	@param val The value of the x coordinate.
-			 * 	@see setY(const T& )
+			/** Sets the x coordinate to the given value.
+			 * @param val The value of the x coordinate.
+			 * @see setY(const T& )
+			 * @since snapshot20190930
 			 */
 			void setX(const T& );
-			/**
-			 *	Sets the y coordinate to the given value.
-			 *	@param val The value of the y coordinate.
-			 *	@see setX(const T& )
+
+			/** Sets the y coordinate to the given value.
+			 * @param val The value of the y coordinate.
+			 * @see setX(const T& )
+			 * @since snapshot20190930
 			 */
-            void setY(const T& );
+			void setY(const T& );
 
 			/**
-			 *	Adds the right vector's coordinates to the left one.
-			 *	@see operator-(const vec2& )
+			 * Adds the right vector's coordinates to the left one.
+			 * @see operator-(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator+(const vec2<T>& );
-			/**
-			 *  Subtracts the right vector's coordinates to the left one.
-			 *	@see operator+(const vec2& )
+
+			/** Subtracts the right vector's coordinates to the left one.
+			 * @see operator+(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator-(const vec2<T>& );
-			/**
-			 *	Multiplies the left vector's coordinates with the right vector.
-			 *	@see operator/(const vec2& )
+			
+			/** Multiplies the left vector's coordinates with the right vector.
+			 * @see operator/(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator*(const vec2<T>& );
-			/**
-			 *	Divides the left vector's coordinates with the right vector.
-			 *	@see operator*(const vec2& )
+			
+			/** Divides the left vector's coordinates with the right vector.
+			 * @see operator*(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator/(const vec2<T>& );
 
-			/**
-			 *	Adds the given value to the vector.
-			 *	@see operator-(const T& )
+			/** Adds the given value to the vector.
+			 * @see operator-(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator+(const T& );
-			/**
-			 *	Subtracts the given value to the vector.
-			 *	@see operator+(const T& )
+
+			/** Subtracts the given value to the vector.
+			 * @see operator+(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator-(const T& );
-			/**
-			 *	Multiplies vector with the given value.
-			 *	@see operator/(const T& )
+			
+			/** Multiplies vector with the given value.
+			 * @see operator/(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator*(const T& );
-			/**
-			 *	Divides vector with the given value.
-			 *	@see operator*(const T& )
+			
+			/** Divides vector with the given value.
+			 * @see operator*(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T> operator/(const T& );
 
-			/**
-			 *	Adds the given vector to this vector.
-			 *	@see operator-=(const vec2& )
+			/** Adds the given vector to this vector.
+			 * @see operator-=(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator+=(const vec2<T>& );
-			/**
-			 *	Subtracts the given vector to this vector.
-			 *	@see operator+=(const vec2& )
+			
+			/** Subtracts the given vector to this vector.
+			 * @see operator+=(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator-=(const vec2<T>& );
-			/**
-			 *	Multiplies this vector by the given vector.
-			 *	@see operator/=(const vec2& )
+			
+			/** Multiplies this vector by the given vector.
+			 * @see operator/=(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator*=(const vec2<T>& );
-			/**
-			 *	Divides this vector by the given vector.
-			 *	@see operator*=(const vec2& )
+			
+			/** Divides this vector by the given vector.
+			 * @see operator*=(const vec2& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator/=(const vec2<T>& );
 
-			/**
-			 *	Adds the given value to this vector.
-			 *	@see operator-=(const T& )
+			/** Adds the given value to this vector.
+			 * @see operator-=(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator+=(const T& );
-			/**
-			 *	Subtracts the given value to this vector.
-			 *	@see operator+=(const T& )
+			
+			/** Subtracts the given value to this vector.
+			 * @see operator+=(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator-=(const T& );
-			/**
-			 *	Multiplies this vector by the given value.
-			 *	@see operator/=(const T& )
+			
+			/** Multiplies this vector by the given value.
+			 * @see operator/=(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator*=(const T& );
-			/**
-			 *	Divides this vector by the given value.
-			 *	@see operator*=(const T& )
+			
+			/** Divides this vector by the given value.
+			 * @see operator*=(const T& )
+			 * @since snapshot20190930
 			 */
 			vec2<T>& operator/=(const T& );
 
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if both coordinates are exactly equal.
-			 * 	@see operator!=()
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if both coordinates are exactly equal.
+			 * @see operator!=()
+			 * @since snapshot20190930
 			 */
 			bool operator==(const vec2<T>& ) const;
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if any of the coordinates are different.
-			 * 	@see operator==()
+			
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if any of the coordinates are different.
+			 * @see operator==()
+			 * @since snapshot20190930
 			 */
 			bool operator!=(const vec2<T>& ) const;
 
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 * 	are lower than the coordinates from the given one.
-			 * 	@see operator>()
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are lower than the coordinates from the given one.
+			 * @see operator>()
+			 * @since snapshot20190930
 			 */
 			bool operator<(const vec2<T>& ) const;
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 *	are lower or equal than the coordinates from the
-			 *	given one.
-			 * 	@see operator>=()
+			
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are lower or equal than the coordinates from the
+			 * given one.
+			 * @see operator>=()
+			 * @since snapshot20190930
 			 */
 			bool operator<=(const vec2<T>& ) const;
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 *	are bigger than the coordinates from the given one
-			 * 	@see operator<()
+			
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are bigger than the coordinates from the given one
+			 * @see operator<()
+			 * @since snapshot20190930
 			 */
 			bool operator>(const vec2<T>& ) const;
-			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 *	are bigger or equal than the coordinates from the
-			 *	given one
-			 * 	@see operator<=()
+			
+			/** Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are bigger or equal than the coordinates from the
+			 * given one
+			 * @see operator<=()
+			 * @since snapshot20190930
 			 */
 			bool operator>=(const vec2<T>& ) const;
 
-			/**
-			 *	The exact same thing as length().
-			 *	@return The magnitude/length of this vector.
-			 * 	@see length()
+			/** The exact same thing as length().
+			 * @return The magnitude/length of this vector.
+			 * @see length()
+			 * @since snapshot20190930
 			 */
 			T magnitude() const;
-			/**
-			 *	Returns the length of this vector.
-			 *	@return The magnitude/length of this vector.
-			 *	@see magnitude()
+			
+			/** Returns the length of this vector.
+			 * @return The magnitude/length of this vector.
+			 * @see magnitude()
+			 * @since snapshot20190930
 			 */
 			T length() const;
-			/**
-			 *	Return true if any coordinate of this vector is null.
-			 *	@return True if any coordinate is NAN. False otherwhise.
+			
+			/** Return true if any coordinate of this vector is null.
+			 * @return <code>true</code> if any coordinate is NAN. <code>false</code> otherwhise.
+			 * @since snapshot20190930
 			 */
 			bool isNull() const;
-			/**
-			 *	Normalizes this vector. (It retains the angle of the
-			 * 	vector but reduces it's length to 1)
-			 *	@see normalized()
+			
+			/** Normalizes this vector. (It retains the angle of the
+			 * vector but reduces it's length to 1)
+			 * @see normalized()
+			 * @since snapshot20190930
 			 */
 			void normalize();
-			/**
-			 *	Returns a new normalized vector from this one. (It
-			 *	retains the angle of this vector but the length
-			 *	of the returned vector is 1)
-			 *	@return Normalized vector with the angle of this one.
-			 * 	@see normalize()
+			
+			/** Returns a new normalized vector from this one. (It
+			 * retains the angle of this vector but the length
+			 * of the returned vector is 1)
+			 * @return Normalized vector with the angle of this one.
+			 * @see normalize()
+			 * @since snapshot20190930
 			 */
 			vec2<T> normalized() const;
-			/**
-			 *	Returns the value of the dot product between this
-			 *	vector and the given one.
-			 *	@param other The vector to dot product with this one.
-			 *	@return The dot product of the two vectors.
+			
+			/** Returns the value of the dot product between this
+			 * vector and the given one.
+			 * @param other The vector to dot product with this one.
+			 * @return The dot product of the two vectors.
+			 * @since snapshot20190930
 			 */
 			T dot(const vec2<T>& ) const;
-			/**
-			 *	Returns the distance from this vector to a point, whose
-			 *	coordinates are on the given vector.
-			 * 	@param other The vector representing the point's coordinates.
-			 * 	@return Distance between this vector and the point.
-			 *	@see distanceToLine()
+			
+			/** Returns the distance from this vector to a point, whose
+			 * coordinates are on the given vector.
+			 * @param other The vector representing the point's coordinates.
+			 * @return Distance between this vector and the point.
+			 * @see distanceToLine()
+			 * @since snapshot20190930
 			 */
 			T distanceToPoint(const vec2<T>& ) const;
-			/**
-			 *	Returns the smallest distance from this vector to a line,
-			 * 	which is defined by a point and angle, provided by the
-			 *	two given vectors.
-			 *	@param point A vector representing the point's coordinates.
-			 * 	@param direction A vector representing the direction of the line.
-			 *	@return The smallest distance between this vector and the line.
-			 *	@see distanceToPoint()
+			
+			/** Returns the smallest distance from this vector to a line,
+			 * which is defined by a point and angle, provided by the
+			 * two given vectors.
+			 * @param point A vector representing the point's coordinates.
+			 * @param direction A vector representing the direction of the line.
+			 * @return The smallest distance between this vector and the line.
+			 * @see distanceToPoint()
+			 * @since snapshot20190930
 			 */
-            T distanceToLine(const vec2<T>& , const vec2<T>& ) const;
+			T distanceToLine(const vec2<T>& , const vec2<T>& ) const;
 
-			/**
-			 *	Returns the vector as a string.
+			/** Returns the vector as a string.
+			 * @since snapshot20190930
 			 */
-            std::string toString() const;
+			std::string toString() const;
 
-			/**
-			 *	Returns the vector as a stream.
+			/** Returns the vector as a stream.
+			 * @since snapshot20190930
 			 */
 			template<typename t>
 			friend std::ostream& operator<<(std::ostream& , const vec2<t>& );
 
-			/**
-			 *	The vector's x coordinate.
-			 * 	@see y
+			/** The vector's x coordinate.
+			 * @see y
+			 * @since snapshot20190930
 			 */
 			T x;
-			/**
-			 *	The vector's y coordinate.
-			 *	@see x
+
+			/** The vector's y coordinate.
+			 * @see x
+			 * @since snapshot20190930
 			 */
 			T y;
 		};

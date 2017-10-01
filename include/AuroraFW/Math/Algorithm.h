@@ -23,18 +23,32 @@
 
 namespace AuroraFW {
 	namespace Math {
+		/**
+		 *	Returns the smallest of the two given variables.
+		 *	@return The smallest variable between a and b.
+		 *	@see inline const T& max()
+		 */
 		template<class T> 
 		AFW_PREFIX inline const T& min(const T& a, const T& b)
 		{
 			return (b < a) ? b : a;
 		}
 
+		/**
+		 *	Returns the biggest of the two given variables.
+		 *	@return The biggest variable between a and b.
+		 *	@see inline const T& min()
+		 */
 		template<class T> 
 		AFW_PREFIX inline const T& max(const T& a, const T& b)
 		{
 			return (a < b) ? b : a;
 		}
 
+		/**
+		 * 	Clamps the first given variable to the values delimited by the two given variables.
+		 *	@return The clamped variable.
+		 */
 		template<class T>
 		AFW_PREFIX inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
 		{

@@ -16,6 +16,11 @@
 ** will be met: https://www.gnu.org/licenses/lgpl-3.0.html.
 ****************************************************************************/
 
+/** @file AuroraFW/Math/Vector3D.h
+ * 3D Vector/Vertex header. This contains a Vector3d struct that
+ * represents a vector or vertex in 3D space.
+ * @since snapshot20170930
+ */
 #ifndef AURORAFW_MATH_VECTOR3D_H
 #define AURORAFW_MATH_VECTOR3D_H
 
@@ -33,402 +38,462 @@ namespace AuroraFW {
 		template<typename T> struct vec2;
 		template<typename T> struct vec4;
 		/**
-		 *	A struct that represents a 3D vector. A struct that store's
-		 * 	position in 3D coordinates, allows to manipulate them and also
-		 * 	to do vector operations.
+		 * A struct that represents a 3D vector. A struct that store's
+		 * position in 3D coordinates, allows to manipulate them and also
+		 * to do vector operations.
+		 * @since snapshot20170930
 		 */
 		template<typename T>
 		struct AFW_PREFIX vec3 {
-			/**
-			 *	Constructs a vector with zero coordinates.
-			 *	@see vec3(const T& )
-			 *	@see vec3(const T& , const T& )
-			 *	@see vec3(const T& , const T& , const T& )
+			/** Constructs a vector with zero coordinates.
+			 * @see vec3(const T& )
+			 * @see vec3(const T& , const T& )
+			 * @see vec3(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3();
-			/**
-			 *	Constructs a vector with the given coordinates.
-			 * 	@param scalar The T value to the x, y and z coordinates.
-			 *	@see vec3()
-			 *	@see vec3(const T& , const T& )
-			 *	@see vec3(const T& , const T& , const T& )
+
+			/** Constructs a vector with the given coordinates.
+			 * @param scalar The T value to the x, y and z coordinates.
+			 * @see vec3()
+			 * @see vec3(const T& , const T& )
+			 * @see vec3(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3(const T& );
-			/**
-			 *	Constructs a vector with the given coordinates.
-			 *	The z value will be defined to 0.
-			 * 	@param x The x value for the x coordinate.
-			 * 	@param y The y value for the y coordinate.
-			 *	@see vec3( )
-			 *	@see vec3(const T& )
-			 *	@see vec3(const T& , const T& , const T& )
+
+			/** Constructs a vector with the given coordinates.
+			 * The z value will be defined to 0.
+			 * @param x The x value for the x coordinate.
+			 * @param y The y value for the y coordinate.
+			 * @see vec3( )
+			 * @see vec3(const T& )
+			 * @see vec3(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3(const T& , const T& );
-			/**
-			 *	Constructs a vector with the given coordinates.
-			 * 	@param x The x value for the x coordinate.
-			 * 	@param y The y value for the y coordinate.
-			 *	@param x The z value for the z coordinate.
-			 *	@see vec3( )
-			 *	@see vec3(const T& )
-			 *	@see vec3(const T& , const T& )
+
+			/** Constructs a vector with the given coordinates.
+			 * @param x The x value for the x coordinate.
+			 * @param y The y value for the y coordinate.
+			 * @param x The z value for the z coordinate.
+			 * @see vec3( )
+			 * @see vec3(const T& )
+			 * @see vec3(const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3(const T& , const T& , const T& );
-			/**
-			 *	Constructs a vector using the coordinates from the given Vector2D<T>.
-			 *	The z value will be defined as 0.
-			 *	@param v The vec2<T> to get both the x and y coordinates from.
-			 *	@see vec3(const vec4<T>& )
+			
+			/** Constructs a vector using the coordinates from the given Vector2D<T>.
+			 * The z value will be defined as 0.
+			 * @param v The vec2<T> to get both the x and y coordinates from.
+			 * @see vec3(const vec4<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3(const vec2<T>& );
-			/**
-			 *	Construct a vector using the coordinates from the given Vector4D<T>.
-			 *	The w value is not used.
-			 *	@param v The vec4<T> to get the x, y and z coordinates from.
-			 *	@see vec3(const vec2<T>& )
+
+			/** Construct a vector using the coordinates from the given Vector4D<T>.
+			 * The w value is not used.
+			 * @param v The vec4<T> to get the x, y and z coordinates from.
+			 * @see vec3(const vec2<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3(const vec4<T>& );
 
-			/**
-			 *	Adds the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const T& )
-			 * 	@see add(const T& , const T& , const T& )
+			/** Adds the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the added coordinates.
+			 * @see add(const T& )
+			 * @see add(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const vec3<T>& );
-			/**
-			 *	Subtracts the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const T& )
-			 * 	@see subtract(const T& , const T& , const T& )
+			
+			/** Subtracts the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const T& )
+			 * @see subtract(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const vec3<T>& );
-			/**
-			 *	Multiplies the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const T& )
-			 * 	@see multiply(const T& , const T& , const T& )
+			
+			/** Multiplies the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const T& )
+			 * @see multiply(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const vec3<T>& );
-			/**
-			 *	Divides the given vector's coordinates to this vector.
-			 *	@param v The vector to get the coordinates from.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const T& )
-			 * 	@see divide(const T& , const T& , const T& )
+			
+			/** Divides the given vector's coordinates to this vector.
+			 * @param v The vector to get the coordinates from.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const T& )
+			 * @see divide(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& divide(const vec3<T>& );
 
-			/**
-			 *	Adds the given value to this vector.
-			 *	@param val The value for all three coordinates.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const vec3<T>& )
-			 * 	@see add(const T& , const T& , const T& )
+			/** Adds the given value to this vector.
+			 * @param val The value for all three coordinates.
+			 * @return This vector with the added coordinates.
+			 * @see add(const vec3<T>& )
+			 * @see add(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const T& );
-			/**
-			 *	Subtracts the given value to this vector.
-			 *	@param val The value for all three coordinates.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const vec3<T>& )
-			 * 	@see subtract(const T& , const T& , const T& )
+			
+			/** Subtracts the given value to this vector.
+			 * @param val The value for all three coordinates.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const vec3<T>& )
+			 * @see subtract(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const T& );
-			/**
-			 *	Multiplies the given value to this vector.
-			 *	@param val The value for all three coordinates.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const vec3<T>& )
-			 * 	@see multiply(const T& , const T& , const T& )
+			
+			/** Multiplies the given value to this vector.
+			 * @param val The value for all three coordinates.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const vec3<T>& )
+			 * @see multiply(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const T& );
-			/**
-			 *	Divides the given value to this vector.
-			 *	@param val The value for all three coordinates.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const vec3<T>& )
-			 * 	@see divide(const T& , const T& , const T& )
+			
+			/** Divides the given value to this vector.
+			 * @param val The value for all three coordinates.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const vec3<T>& )
+			 * @see divide(const T& , const T& , const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& divide(const T& );
 
-			/**
-			 *	Adds the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@param valZ The value for the z coordinate.
-			 *	@return This vector with the added coordinates.
-			 *	@see add(const vec3<T>& )
-			 * 	@see add(const T& )
+			/** Adds the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @param valZ The value for the z coordinate.
+			 * @return This vector with the added coordinates.
+			 * @see add(const vec3<T>& )
+			 * @see add(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const T& , const T& , const T& );
-			/**
-			 *	Subtracts the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@param valZ The value for the z coordinate.
-			 *	@return This vector with the subtracted coordinates.
-			 *	@see subtract(const vec3<T>& )
-			 * 	@see subtract(const T& )
+			
+			/** Subtracts the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @param valZ The value for the z coordinate.
+			 * @return This vector with the subtracted coordinates.
+			 * @see subtract(const vec3<T>& )
+			 * @see subtract(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const T& , const T& , const T& );
-			/**
-			 *	Multiplies the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@param valZ The value for the z coordinate.
-			 *	@return This vector with the multiplied coordinates.
-			 *	@see multiply(const vec3<T>& )
-			 * 	@see multiply(const T& )
+			
+			/** Multiplies the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @param valZ The value for the z coordinate.
+			 * @return This vector with the multiplied coordinates.
+			 * @see multiply(const vec3<T>& )
+			 * @see multiply(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const T& , const T& , const T& );
-			/**
-			 *	Divides the given values to this vector.
-			 *	@param valX The value for the x coordinate.
-			 * 	@param valY The value for the y coordinate.
-			 *	@param valZ The value for the z coordinate.
-			 *	@return This vector with the divided coordinates.
-			 *	@see divide(const vec3<T>& )
-			 * 	@see divide(const T& )
+			
+			/** Divides the given values to this vector.
+			 * @param valX The value for the x coordinate.
+			 * @param valY The value for the y coordinate.
+			 * @param valZ The value for the z coordinate.
+			 * @return This vector with the divided coordinates.
+			 * @see divide(const vec3<T>& )
+			 * @see divide(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& divide(const T& , const T& , const T& );
 
-			/**
-			 *	Sets the x coordinate to the given value.
-			 * 	@param val The value of the x coordinate.
-			 * 	@see setY(const T& )
-			 * 	@see setZ(const T& )
+			/** Sets the x coordinate to the given value.
+			 * @param val The value of the x coordinate.
+			 * @see setY(const T& )
+			 * @see setZ(const T& )
+			 * @since snapshot20170930
 			 */
 			void setX(const T& );
-			/**
-			 *	Sets the y coordinate to the given value.
-			 * 	@param val The value of the y coordinate.
-			 * 	@see setX(const T& )
-			 *	@see setZ(const T& )
+			
+			/** Sets the y coordinate to the given value.
+			 * @param val The value of the y coordinate.
+			 * @see setX(const T& )
+			 * @see setZ(const T& )
+			 * @since snapshot20170930
 			 */
 			void setY(const T& );
-			/**
-			 *	Sets the z coordinate to the given value.
-			 * 	@param val The value of the z coordinate.
-			 *	@see setX(const T& )
-			 * 	@see setY(const T& )
+			
+			/** Sets the z coordinate to the given value.
+			 * @param val The value of the z coordinate.
+			 * @see setX(const T& )
+			 * @see setY(const T& )
+			 * @since snapshot20170930
 			 */
 			void setZ(const T& );
 
-			/**
-			 *	Adds the right vector's coordinates to the left one.
-			 *	@see operator-(const vec3<T>& )
+			/** Adds the right vector's coordinates to the left one.
+			 * @see operator-(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator+(const vec3<T>& );
-			/**
-			 *  Subtracts the right vector's coordinates to the left one.
-			 *	@see operator+(const vec3<T>& )
+			
+			/** Subtracts the right vector's coordinates to the left one.
+			 * @see operator+(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator-(const vec3<T>& );
-			/**
-			 *	Multiplies the left vector's coordinates with the right vector.
-			 *	@see operator/(const vec3<T>& )
+			
+			/** Multiplies the left vector's coordinates with the right vector.
+			 * @see operator/(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator*(const vec3<T>& );
-			/**
-			 *	Divides the left vector's coordinates with the right vector.
-			 *	@see operator*(const vec3<T>& )
+			
+			/** Divides the left vector's coordinates with the right vector.
+			 * @see operator*(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator/(const vec3<T>& );
 
-			/**
-			 *	Adds the given value to the vector.
-			 *	@see operator-(const T& )
+			/** Adds the given value to the vector.
+			 * @see operator-(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator+(const T& );
-			/**
-			 *	Subtracts the given value to the vector.
-			 *	@see operator+(const T& )
+			
+			/** Subtracts the given value to the vector.
+			 * @see operator+(const T& )
 			 */
 			vec3<T> operator-(const T& );
-			/**
-			 *	Multiplies vector with the given value.
-			 *	@see operator/(const T& )
+			
+			/** Multiplies vector with the given value.
+			 * @see operator/(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator*(const T& );
-			/**
-			 *	Divides vector with the given value.
-			 *	@see operator*(const T& )
+			
+			/** Divides vector with the given value.
+			 * @see operator*(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T> operator/(const T& );
 
-			/**
-			 *	Adds the given vector to this vector.
-			 *	@see operator-=(const vec3<T>& )
+			/** Adds the given vector to this vector.
+			 * @see operator-=(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator+=(const vec3<T>& );
-			/**
-			 *	Subtracts the given vector to this vector.
-			 *	@see operator+=(const vec3<T>& )
+			
+			/** Subtracts the given vector to this vector.
+			 * @see operator+=(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator-=(const vec3<T>& );
-			/**
-			 *	Multiplies this vector by the given vector.
-			 *	@see operator/=(const vec3<T>& )
+			
+			/** Multiplies this vector by the given vector.
+			 * @see operator/=(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator*=(const vec3<T>& );
-			/**
-			 *	Divides this vector by the given vector.
-			 *	@see operator*=(const vec3<T>& )
+			
+			/** Divides this vector by the given vector.
+			 * @see operator*=(const vec3<T>& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator/=(const vec3<T>& );
 
-			/**
-			 *	Adds the given value to this vector.
-			 *	@see operator-=(const T& )
+			/** Adds the given value to this vector.
+			 * @see operator-=(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator+=(const T& );
-			/**
-			 *	Subtracts the given value to this vector.
-			 *	@see operator+=(const T& )
+			
+			/** Subtracts the given value to this vector.
+			 * @see operator+=(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator-=(const T& );
-			/**
-			 *	Multiplies this vector by the given value.
-			 *	@see operator/=(const T& )
+			
+			/** Multiplies this vector by the given value.
+			 * @see operator/=(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator*=(const T& );
-			/**
-			 *	Divides this vector by the given value.
-			 *	@see operator*=(const T& )
+			
+			/** Divides this vector by the given value.
+			 * @see operator*=(const T& )
+			 * @since snapshot20170930
 			 */
 			vec3<T>& operator/=(const T& );
 
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all three coordinates are exactly equal.
-			 * 	@see operator!=()
+			 * Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all three coordinates are exactly equal.
+			 * @see operator!=()
+			 * @since snapshot20170930
 			 */
 			bool operator==(const vec3<T>& ) const;
+			
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if any of the coordinates are different.
-			 * 	@see operator==()
+			 * Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if any of the coordinates are different.
+			 * @see operator==()
+			 * @since snapshot20170930
 			 */
 			bool operator!=(const vec3<T>& ) const;
 
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 * 	are lower than the coordinates from the given one.
-			 * 	@see operator>()
+			 * Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are lower than the coordinates from the given one.
+			 * @see operator>()
+			 * @since snapshot20170930
 			 */
 			bool operator<(const vec3<T>& ) const;
+
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and returns true if all the coordinates from this vector
-			 *	are lower or equal than the coordinates from the
-			 *	given one.
-			 * 	@see operator>=()
+			 * Compares this vector's coordinates with the given one
+			 * and returns <code>true</code> if all the coordinates from this vector
+			 * are lower or equal than the coordinates from the
+			 * given one.
+			 * @see operator>=()
+			 * @since snapshot20170930
 			 */
 			bool operator<=(const vec3<T>& ) const;
+
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
-			 *	are bigger than the coordinates from the given one
-			 * 	@see operator<()
+			 * Compares this vector's coordinates with the given one
+			 * and return <code>true</code> if all the coordinates from this vector
+			 * are bigger than the coordinates from the given one
+			 * @see operator<()
+			 * @since snapshot20170930
 			 */
 			bool operator>(const vec3<T>& ) const;
+
 			/**
-			 *	Compares this vector's coordinates with the given one
-			 *	and return true if all the coordinates from this vector
-			 *	are bigger or equal than the coordinates from the
-			 *	given one
-			 * 	@see operator<=()
+			 * Compares this vector's coordinates with the given one
+			 * and return <code>true</code> if all the coordinates from this vector
+			 * are bigger or equal than the coordinates from the
+			 * given one
+			 * @see operator<=()
+			 * @since snapshot20170930
 			 */
 			bool operator>=(const vec3<T>& ) const;
 
 			/**
-			 *	The exact same thing as length().
-			 *	@return The magnitude/length of this vector.
-			 * 	@see length()
+			 * The exact same thing as length().
+			 * @return The magnitude/length of this vector.
+			 * @see length()
+			 * @since snapshot20170930
 			 */
 			T magnitude() const;
+
 			/**
-			 *	Returns the length of this vector.
-			 *	@return The magnitude/length of this vector.
-			 *	@see magnitude()
+			 * Returns the length of this vector.
+			 * @return The magnitude/length of this vector.
+			 * @see magnitude()
+			 * @since snapshot20170930
 			 */
 			T length() const;
+
 			/**
-			 *	Return true if any coordinate of this vector is null.
-			 *	@return True if any coordinate is NAN. False otherwhise.
+			 * Return true if any coordinate of this vector is null.
+			 * @return <code>true</code> if any coordinate is NAN. <code>false</code> otherwhise.
+			 * @since snapshot20170930
 			 */
 			bool isNull() const;
+
 			/**
-			 *	Normalizes this vector. (It retains the angle of the
-			 * 	vector but reduces it's length to 1)
-			 *	@see normalized()
+			 * Normalizes this vector. (It retains the angle of the
+			 * vector but reduces it's length to 1)
+			 * @see normalized()
+			 * @since snapshot20170930
 			 */
 			void normalize();
+
 			/**
-			 *	Returns a new normalized vector from this one. (It
-			 *	retains the angle of this vector but the length
-			 *	of the returned vector is 1)
-			 *	@return Normalized vector with the angle of this one.
-			 * 	@see normalize()
+			 * Returns a new normalized vector from this one. (It
+			 * retains the angle of this vector but the length
+			 * of the returned vector is 1)
+			 * @return Normalized vector with the angle of this one.
+			 * @see normalize()
+			 * @since snapshot20170930
 			 */
 			vec3<T> normalized() const;
+
 			/**
-			 *	Returns the value of the dot product between this
-			 *	vector and the given one.
-			 *	@param other The vector to dot product with this one.
-			 *	@return The dot product of the two vectors.
+			 * Returns the value of the dot product between this
+			 * vector and the given one.
+			 * @param other The vector to dot product with this one.
+			 * @return The dot product of the two vectors.
+			 * @since snapshot20170930
 			 */
 			T dot(const vec3<T>& ) const;
+
 			/**
-			 *	Returns the distance from this vector to a point, whose
-			 *	coordinates are on the given vector.
-			 * 	@param other The vector representing the point's coordinates.
-			 * 	@return Distance between this vector and the point.
-			 *	@see distanceToLine()
+			 * Returns the distance from this vector to a point, whose
+			 * coordinates are on the given vector.
+			 * @param other The vector representing the point's coordinates.
+			 * @return Distance between this vector and the point.
+			 * @see distanceToLine()
+			 * @since snapshot20170930
 			 */
 			T distanceToPoint(const vec3<T>& ) const;
+
 			/**
-			 *	Returns the smallest distance from this vector to a line,
-			 * 	which is defined by a point and angle, provided by the
-			 *	two given vectors.
-			 *	@param point A vector representing the point's coordinates.
-			 * 	@param direction A vector representing the direction of the line.
-			 *	@return The smallest distance between this vector and the line.
-			 *	@see distanceToPoint()
+			 * Returns the smallest distance from this vector to a line,
+			 * which is defined by a point and angle, provided by the
+			 * two given vectors.
+			 * @param point A vector representing the point's coordinates.
+			 * @param direction A vector representing the direction of the line.
+			 * @return The smallest distance between this vector and the line.
+			 * @see distanceToPoint()
+			 * @since snapshot20170930
 			 */
 			T distanceToLine(const vec3<T>&, const vec3<T>& ) const;
 
 			/**
-			 *	Returns the vector as a string.
+			 * Returns the vector as a string.
+			 * @since snapshot20170930
 			 */
 			std::string toString() const;
 
 			/**
-			 *	Returns the vector as a stream.
+			 * Returns the vector as a stream.
+			 * @since snapshot20170930
 			 */
 			friend std::ostream& operator<<(std::ostream& , const vec3<T>& );
 
 			/**
-			 *	The vector's x coordinate.
-			 * 	@see y
-			 *	@see z
+			 * The vector's x coordinate.
+			 * @see y
+			 * @see z
+			 * @since snapshot20170930
 			 */
 			T x;
+
 			/**
-			 *	The vector's y coordinate.
-			 * 	@see x
-			 *	@see z
+			 * The vector's y coordinate.
+			 * @see x
+			 * @see z
+			 * @since snapshot20170930
 			 */
 			T y;
+			
 			/**
-			 *	The vector's z coordinate.
-			 *	@see x
-			 * 	@see y
+			 * The vector's z coordinate.
+			 * @see x
+			 * @see y
+			 * @since snapshot20170930
 			 */
 			T z;
 		};
