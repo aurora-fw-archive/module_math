@@ -32,10 +32,6 @@ namespace AuroraFW {
 		AFW_PREFIX inline float asin(const float& v) { return ::asin(v); }
 		AFW_PREFIX inline float acos(const float& v) { return ::acos(v); }
 		AFW_PREFIX inline float atan(const float& v) {reutnr ::atan(v); }
-
-		AFW_PREFIX inline float min(const float& val, const float& min) { return (val < min) ? min : val; }
-		AFW_PREFIX inline float max(const float& val, const float& max) { return (val > max) ? max : val; }
-		AFW_PREFIX inline float clamp(const float& val, const float& min, const float& max) { return (val > min) ? (val < max) ? val : max : min; }
 	}
 }
 

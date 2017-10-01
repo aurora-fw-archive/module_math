@@ -38,7 +38,7 @@ namespace AuroraFW {
 		template<class T>
 		AFW_PREFIX inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
 		{
-			return min(max(v, min(lo, hi)), max(lo, hi));
+			return (v > lo) ? (v < hi) ? v : hi : lo;
 		}
 	}
 }
