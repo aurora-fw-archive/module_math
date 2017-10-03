@@ -471,6 +471,7 @@ namespace AuroraFW {
 			 * Returns the vector as a stream.
 			 * @since snapshot20170930
 			 */
+			template<typename t>
 			friend std::ostream& operator<<(std::ostream& , const vec3<T>& );
 
 			/**

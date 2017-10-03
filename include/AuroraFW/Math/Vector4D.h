@@ -39,9 +39,13 @@ namespace AuroraFW {
 			vec4<T>& Multiply(const vec4<T>& );
 			vec4<T>& Divide(const vec4<T>& );
 
+			template<typename t>
 			friend vec4<T> operator+(vec4<T> , const vec4<T>& );
+			template<typename t>
 			friend vec4<T> operator-(vec4<T> , const vec4<T>& );
+			template<typename t>
 			friend vec4<T> operator*(vec4<T> , const vec4<T>& );
+			template<typename t>
 			friend vec4<T> operator/(vec4<T> , const vec4<T>& );
 
 			bool operator==(const vec4<T>& ) const;
@@ -52,6 +56,7 @@ namespace AuroraFW {
 			vec4<T>& operator*=(const vec4<T>& );
 			vec4<T>& operator/=(const vec4<T>& );
 
+			template<typename t>
 			friend std::ostream& operator<<(std::ostream& , const vec4<T>& );
 
 			T x, y, z, w;
