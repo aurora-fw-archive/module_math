@@ -240,6 +240,27 @@ namespace AuroraFW {
 			 */
 			void setZ(const T& );
 
+			/** Gets the x coordinate.
+			 * @see getY()
+			 * @see getZ()
+			 * @since snapshot20171003
+			 */
+			T getX() const;
+			
+			/** Gets the y coordinate.
+			 * @see getX()
+			 * @see getZ()
+			 * @since snapshot20171003
+			 */
+			T getY() const;
+			
+			/** Gets the z coordinate.
+			 * @see getX()
+			 * @see getY()
+			 * @since snapshot20171003
+			 */
+			T getZ() const;
+
 			/** Adds the right vector's coordinates to the left one.
 			 * @see operator-(const vec3<T>& )
 			 * @since snapshot20170930
@@ -530,6 +551,24 @@ namespace AuroraFW {
 		inline void vec3<T>::setZ(const T& val)
 		{
 			z = val;
+		}
+
+		template<typename T>
+		inline T vec3<T>::getX() const
+		{
+			return x;
+		}
+
+		template<typename T>
+		inline T vec3<T>::getY() const
+		{
+			return y;
+		}
+
+		template<typename T>
+		inline T vec3<T>::getZ() const
+		{
+			return z;
 		}
 
 		// Inline Operators
