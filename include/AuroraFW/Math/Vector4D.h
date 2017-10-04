@@ -102,6 +102,54 @@ namespace AuroraFW {
 		};
 
 		typedef vec4<float> Vector4D;
+
+		template<typename T>
+		inline T vec4<T>::getX() const
+		{
+			return x;
+		}
+
+		template<typename T>
+		inline T vec4<T>::getY() const
+		{
+			return y;
+		}
+
+		template<typename T>
+		inline T vec4<T>::getZ() const
+		{
+			return z;
+		}
+
+		template<typename T>
+		inline T vec4<T>::getW() const
+		{
+			return w;
+		}
+
+		template<typename T>
+		inline void vec4<T>::setX(T val)
+		{
+			x = val;
+		}
+
+		template<typename T>
+		inline void vec4<T>::setY(T val)
+		{
+			y = val;
+		}
+
+		template<typename T>
+		inline void vec4<T>::setZ(T val)
+		{
+			z = val;
+		}
+		
+		template<typename T>
+		inline void vec4<T>::setW(T val)
+		{
+			w = val;
+		}
 	}
 }
 
