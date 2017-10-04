@@ -25,6 +25,7 @@
 
 namespace AuroraFW {
 	namespace Math {
+		template<typename T> struct vec2;
 		template<typename T> struct vec3;
 
 		/**
@@ -38,15 +39,23 @@ namespace AuroraFW {
 			vec4();
 			vec4(const T& );
 			vec4(const T& , const T& , const T& , const T& );
+			vec4(const vec2<T>& );
+			vec4(const vec2<T>& , const T& , const T& );
+			vec4(const vec3<T>& );
 			vec4(const vec3<T>& , const T& );
+			vec4(const vec4<T>& );
 
 			vec4<T>& add(const vec4<T>& );
+			vec4<T>& add(const T& );
 			vec4<T>& add(const T& , const T& , const T& , const T& );
 			vec4<T>& subtract(const vec4<T>& );
+			vec4<T>& subtract(const T& );
 			vec4<T>& subtract(const T& , const T& , const T& , const T& );
 			vec4<T>& multiply(const vec4<T>& );
+			vec4<T>& multiply(const T& );
 			vec4<T>& multiply(const T& , const T& , const T& , const T& );
 			vec4<T>& divide(const vec4<T>& );
+			vec4<T>& divide(const T& );
 			vec4<T>& divide(const T& , const T& , const T& , const T& );
 
 			void setX(T );
@@ -149,6 +158,295 @@ namespace AuroraFW {
 		inline void vec4<T>::setW(T val)
 		{
 			w = val;
+		}
+
+		template<typename T>
+		vec4<T>::vec4()
+			: x(0), y(0), z(0), w(0)
+		{}
+
+		template<typename T>
+		vec4<T>::vec4(const T& scalar)
+			: x(scalar), y(scalar), z(scalar), w(scalar)
+		{}
+
+		template<typename T>
+		vec4<T>::vec4(const T& x, const T& y, const T& z, const T& w)
+			: x(x), y(y), z(z), w(w)
+		{}
+		
+		template<typename T>
+		vec4<T>::vec4(const vec2<T>& v)
+			: x(v.x), y(v.y), z(0), w(0)
+		{}
+
+		template<typename T>
+		vec4<T>::vec4(const vec2<T>& v, const T& z, const T& w)
+		: x(v.x), y(v.y), z(z), w(w)
+		{}
+		
+		template<typename T>
+		vec4<T>::vec4(const vec3<T>& v)
+			: x(v.x), y(v.y), z(v.z), w(0)
+		{}
+
+		template<typename T>
+		vec4<T>::vec4(const vec4<T>& v)
+			: x(v.x), y(v.y), z(v.z), w(v.w)
+		{}
+
+		//Operations
+		template<typename T>
+		vec4<T>& vec4<T>::add(const vec4<T>& v)
+		{
+			x += v.x;
+			y += v.y;
+			z += v.z;
+			w += v.w;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::subtract(const vec4<T>& v)
+		{
+			x -= v.x;
+			y -= v.y;
+			z -= v.z;
+			w -= v.w;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::multiply(const vec4<T>& v)
+		{
+			x *= v.x;
+			y *= v.y;
+			z *= v.z;
+			w *= v.w;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::divide(const vec4<T>& v)
+		{
+			x /= v.x;
+			y /= v.y;
+			z /= v.z;
+			w /= v.w;
+
+			return *this;
+		}
+
+		// Using a value (scalar)
+		template<typename T>
+		vec4<T>& vec4<T>::add(const T& val)
+		{
+			x += val;
+			y += val;
+			z += val;
+			w += val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::subtract(const T& val)
+		{
+			x -= val;
+			y -= val;
+			z -= val;
+			w -= val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::multiply(const T& val)
+		{
+			x *= val;
+			y *= val;
+			z *= val;
+			w *= val;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::divide(const T& val)
+		{
+			x /= val;
+			y /= val;
+			z /= val;
+			w /= val;
+
+			return *this;
+		}
+
+		// Using an x, y, z and w values
+		template<typename T>
+		vec4<T>& vec4<T>::add(const T& valX, const T& valY, const T& valZ, const T& valW)
+		{
+			x += valX;
+			y += valY;
+			z += valZ;
+			w += valW;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::subtract(const T& valX, const T& valY, const T& valZ, const T& valW)
+		{
+			x -= valX;
+			y -= valY;
+			z -= valZ;
+			w -= valW;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::multiply(const T& valX, const T& valY, const T& valZ, const T& valW)
+		{
+			x *= valX;
+			y *= valY;
+			z *= valZ;
+			w *= valW;
+
+			return *this;
+		}
+
+		template<typename T>
+		vec4<T>& vec4<T>::divide(const T& valX, const T& valY, const T& valZ, const T& valW)
+		{
+			x /= valX;
+			y /= valY;
+			z /= valZ;
+			w /= valW;
+
+			return *this;
+		}
+
+		//Operators
+		template<typename T>
+		vec4<T> vec4<T>::operator+(const T& value)
+		{
+			return vec4<T>(x + value, y + value, z + value, w + value);
+		}
+
+		template<typename T>
+		vec4<T> vec4<T>::operator-(const T& value)
+		{
+			return vec4<T>(x - value, y - value, z - value, w - value);
+		}
+
+		template<typename T>
+		vec4<T> vec4<T>::operator*(const T& value)
+		{
+			return vec4<T>(x * value, y * value, z * value, w * value);
+		}
+
+		template<typename T>
+		vec4<T> vec4<T>::operator/(const T& value)
+		{
+			return vec4<T>(x / value, y / value, z / value, w / value);
+		}
+
+		template<typename T>
+		bool vec4<T>::operator==(const vec4<T>& other) const
+		{
+			return x == other.x && y == other.y && z == other.z && w == other.w;
+		}
+
+		template<typename T>
+		bool vec4<T>::operator!=(const vec4<T>& other) const
+		{
+			return !(*this == other);
+		}
+
+		template<typename T>
+		bool vec4<T>::operator<(const vec4<T>& other) const
+		{
+			return x < other.x && y < other.y && z < other.z && w < other.w;
+		}
+
+		template<typename T>
+		bool vec4<T>::operator<=(const vec4<T>& other) const
+		{
+			return x <= other.x && y <= other.y && z <= other.z && w <= other.w;
+		}
+
+		template<typename T>
+		bool vec4<T>::operator>(const vec4<T>& other) const
+		{
+			return x > other.x && y > other.y && z > other.z && w > other.w;
+		}
+
+		template<typename T>
+		bool vec4<T>::operator>=(const vec4<T>& other) const
+		{
+			return x >= other.x && y >= other.y && z >= other.z && w >= other.w;
+		}
+
+		template<typename T>
+		T vec4<T>::length() const
+		{
+			return sqrt(x * x + y * y + z * z + w * w);
+		}
+
+		template<typename T>
+		void vec4<T>::normalize()
+		{
+			T length = magnitude();
+			this->x /= length;
+			this->y /= length;
+			this->z /= length;
+			this->w /= length;
+		}
+
+		template<typename T>
+		vec4<T> vec4<T>::normalized() const
+		{
+			T length = magnitude();
+			return vec4<T>(x / length, y / length, z / length, w / length);
+		}
+
+		template<typename T>
+		T vec4<T>::dot(const vec4<T>& other) const
+		{
+			return x * other.x + y * other.y + z * other.z + w * other.w;
+		}
+
+		template<typename T>
+		T vec4<T>::distanceToPoint(const vec4<T>& other) const
+		{
+			T a = x - other.x;
+			T b = y - other.y;
+			T c = z - other.z;
+			T s = w - other.w;
+			return sqrt(a * a + b * b + c * c + d * d);
+		}
+
+		template<typename T>
+		T vec4<T>::distanceToLine(const vec4<T>& point, const vec4<T>& direction) const
+		{
+			// TODO: Find the formula to get the distance
+		}
+
+		template<typename T>
+		std::string vec4<T>::toString() const
+		{
+			return "vec4: (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+		}
+
+		template <class T>
+		std::ostream& operator<<(std::ostream& stream, const vec4<T>& vector)
+		{
+			stream << vector.toString();
+			return stream;
 		}
 	}
 }

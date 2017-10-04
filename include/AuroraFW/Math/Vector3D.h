@@ -84,7 +84,7 @@ namespace AuroraFW {
 			 */
 			vec3(const T& , const T& , const T& );
 			
-			/** Constructs a vector using the coordinates from the given Vector2D<T>.
+			/** Constructs a vector using the coordinates from the given vec2<T>.
 			 * The z value will be defined as 0.
 			 * @param v The vec2<T> to get both the x and y coordinates from.
 			 * @see vec3(const vec4<T>& )
@@ -92,7 +92,15 @@ namespace AuroraFW {
 			 */
 			vec3(const vec2<T>& );
 
-			/** Construct a vector using the coordinates from the given Vector4D<T>.
+			/** Constructs a vector using the coordinates from the given vec3<T>.
+			 * The z value will be defined as 0.
+			 * @param v The vec2<T> to get both the x and y coordinates from.
+			 * @see vec3(const vec4<T>& )
+			 * @since snapshot20170930
+			 */
+			vec3(const vec3<T> &);
+
+			/** Construct a vector using the coordinates from the given vec4<T>.
 			 * The w value is not used.
 			 * @param v The vec4<T> to get the x, y and z coordinates from.
 			 * @see vec3(const vec2<T>& )
@@ -648,7 +656,7 @@ namespace AuroraFW {
 		// Constructors
 		template<typename T>
 		vec3<T>::vec3()
-		: x(0.0f), y(0.0f), z(0.0f)
+		: x(0), y(0), z(0)
 		{}
 
 		template<typename T>
@@ -668,7 +676,12 @@ namespace AuroraFW {
 
 		template<typename T>
 		vec3<T>::vec3(const vec2<T>& v)
-			: x(v.x), y(v.y), z(0.0f)
+			: x(v.x), y(v.y), z(0)
+		{}
+
+		template<typename T>
+		vec3<T>::vec3(const vec3<T>& v)
+			: x(v.x), y(v.y), z(v.z)
 		{}
 
 		template<typename T>
