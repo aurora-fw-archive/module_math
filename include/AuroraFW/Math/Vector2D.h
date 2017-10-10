@@ -27,7 +27,8 @@
 
 #include <AuroraFW/Global.h>
 
-#include <AuroraFW/TLib/_IOStream.h>
+#include <AuroraFW/STDL/STL/IStream.h>
+#include <AuroraFW/STDL/STL/OStream.h>
 
 #include <AuroraFW/Math/Vector3D.h>
 #include <AuroraFW/Math/Vector4D.h>
@@ -45,7 +46,7 @@ namespace AuroraFW {
 		 * @since snapshot20190930
 		 */
 		template<typename T>
-		struct AFW_PREFIX vec2 {
+		struct AFW_EXPORT vec2 {
 			/** Constructs a vector with zero coordinates.
 			 * @see vec2(const T& )
 			 * @see vec2(const T& , const T& )

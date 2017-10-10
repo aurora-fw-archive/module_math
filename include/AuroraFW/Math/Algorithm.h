@@ -29,7 +29,7 @@ namespace AuroraFW {
 		 *	@see inline const T& max()
 		 */
 		template<class T> 
-		AFW_PREFIX inline const T& min(const T& a, const T& b)
+		AFW_EXPORT inline const T& min(const T& a, const T& b)
 		{
 			return (b < a) ? b : a;
 		}
@@ -40,7 +40,7 @@ namespace AuroraFW {
 		 *	@see inline const T& min()
 		 */
 		template<class T> 
-		AFW_PREFIX inline const T& max(const T& a, const T& b)
+		AFW_EXPORT inline const T& max(const T& a, const T& b)
 		{
 			return (a < b) ? b : a;
 		}
@@ -50,7 +50,7 @@ namespace AuroraFW {
 		 *	@return The clamped variable.
 		 */
 		template<class T>
-		AFW_PREFIX inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
+		AFW_EXPORT inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
 		{
 			return (v > lo) ? (v < hi) ? v : hi : lo;
 		}

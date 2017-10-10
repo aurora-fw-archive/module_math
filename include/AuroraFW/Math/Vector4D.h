@@ -21,6 +21,9 @@
 
 #include <AuroraFW/Global.h>
 
+#include <AuroraFW/STDL/STL/IStream.h>
+#include <AuroraFW/STDL/STL/OStream.h>
+
 #include <AuroraFW/Math/Vector3D.h>
 
 namespace AuroraFW {
@@ -35,7 +38,7 @@ namespace AuroraFW {
 		 * @since snapshot20171003
 		 */
 		template<typename T>
-		struct AFW_PREFIX vec4 {
+		struct AFW_EXPORT vec4 {
 			vec4();
 			vec4(const T& );
 			vec4(const T& , const T& , const T& , const T& );
@@ -67,10 +70,10 @@ namespace AuroraFW {
 
 			bool operator==(const vec4<T>& ) const;
 			bool operator!=(const vec4<T>& ) const;
-			bool operator<(const vec3<T>& ) const;
-			bool operator>(const vec3<T>& ) const;
-			bool operator<=(const vec3<T>& ) const;
-			bool operator>=(const vec3<T>& ) const;
+			bool operator<(const vec4<T>& ) const;
+			bool operator>(const vec4<T>& ) const;
+			bool operator<=(const vec4<T>& ) const;
+			bool operator>=(const vec4<T>& ) const;
 
 			vec4<T> operator+(const vec4<T>& );
 			vec4<T> operator+(const T& );
@@ -99,7 +102,7 @@ namespace AuroraFW {
 			T magnitude() const;
 			bool isNull() const;
 			vec4<T> normalized() const;
-			T dot(vec4<T>) const;
+			T dot(const vec4<T>& ) const;
 			T distanceToPoint(const vec4<T>& ) const;
 			T distanceToLine(const vec4<T>&, const vec4<T>& ) const;
 			std::string toString() const;
@@ -111,6 +114,12 @@ namespace AuroraFW {
 		};
 
 		typedef vec4<float> Vector4D;
+
+		template<typename T>
+		inline T vec4<T>::magnitude() const
+		{
+			return length();
+		}
 
 		template<typename T>
 		inline T vec4<T>::getX() const
@@ -426,7 +435,7 @@ namespace AuroraFW {
 			T a = x - other.x;
 			T b = y - other.y;
 			T c = z - other.z;
-			T s = w - other.w;
+			T d = w - other.w;
 			return sqrt(a * a + b * b + c * c + d * d);
 		}
 
@@ -439,7 +448,7 @@ namespace AuroraFW {
 		template<typename T>
 		std::string vec4<T>::toString() const
 		{
-			return "vec4: (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+			return std::to_string(x) + ", " + std::to_string(y);
 		}
 
 		template <class T>
