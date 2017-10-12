@@ -26,7 +26,6 @@
 
 #include <AuroraFW/Global.h>
 
-#include <AuroraFW/STDL/STL/IStream.h>
 #include <AuroraFW/STDL/STL/OStream.h>
 
 #include <AuroraFW/Math/Vector2D.h>
@@ -925,7 +924,7 @@ namespace AuroraFW {
 			return "vec3: (" + std::to_string(x) + ", " + std::to_string(y) + ")";
 		}
 
-		template <class T>
+		template <typename T>
 		std::ostream& operator<<(std::ostream& stream, const vec3<T>& vector)
 		{
 			stream << vector.toString();
