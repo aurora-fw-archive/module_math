@@ -30,6 +30,7 @@ namespace AuroraFW {
 	namespace Math {
 		template<typename T> struct vec2;
 		template<typename T> struct vec3;
+		template<typename T> struct mat4;
 
 		/**
 		 * A struct that represents a 4D vector. A struct that store's
@@ -57,6 +58,7 @@ namespace AuroraFW {
 			vec4<T>& multiply(const vec4<T>& );
 			vec4<T>& multiply(const T& );
 			vec4<T>& multiply(const T& , const T& , const T& , const T& );
+			vec4<T> multiply(const mat4<T> &) const;
 			vec4<T>& divide(const vec4<T>& );
 			vec4<T>& divide(const T& );
 			vec4<T>& divide(const T& , const T& , const T& , const T& );
@@ -284,6 +286,17 @@ namespace AuroraFW {
 		}
 
 		template<typename T>
+		vec4<T> vec4<T>::multiply(const mat4<T>& mat) const
+		{
+			return vec4(
+				mat.r[0].x * x + mat.r[0].y * y + mat.r[0].z * z + mat.r[0].w * w,
+				mat.r[1].x * x + mat.r[1].y * y + mat.r[1].z * z + mat.r[1].w * w,
+				mat.r[2].x * x + mat.r[2].y * y + mat.r[2].z * z + mat.r[2].w * w,
+				mat.r[3].x * x + mat.r[3].y * y + mat.r[3].z * z + mat.r[3].w * w
+				);
+		}
+
+		template<typename T>
 		vec4<T>& vec4<T>::divide(const T& val)
 		{
 			x /= val;
@@ -362,6 +375,54 @@ namespace AuroraFW {
 		vec4<T> vec4<T>::operator/(const T& value)
 		{
 			return vec4<T>(x / value, y / value, z / value, w / value);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator+=(const vec4<T>& obj)
+		{
+			return add(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator-=(const vec4<T>& obj)
+		{
+			return subtract(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator*=(const vec4<T>& obj)
+		{
+			return multiply(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator/=(const vec4<T>& obj)
+		{
+			return divide(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator+=(const T& obj)
+		{
+			return add(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator-=(const T& obj)
+		{
+			return subtract(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator*=(const T& obj)
+		{
+			return multiply(obj);
+		}
+
+		template<typename T>
+		inline vec4<T>& vec4<T>::operator/=(const T& obj)
+		{
+			return divide(obj);
 		}
 
 		template<typename T>
@@ -459,5 +520,7 @@ namespace AuroraFW {
 		}
 	}
 }
+
+#include <AuroraFW/Math/Matrix4x4.h>
 
 #endif // AURORAFW_MATH_VECTOR4D_H

@@ -37,6 +37,8 @@ namespace AuroraFW {
 	namespace Math {
 		template<typename T> struct vec2;
 		template<typename T> struct vec4;
+		template<typename T> struct mat4;
+
 		/**
 		 * A struct that represents a 3D vector. A struct that store's
 		 * position in 3D coordinates, allows to manipulate them and also
@@ -170,6 +172,8 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const T& );
+
+			vec3<T> multiply(const mat4<T> &) const;
 			
 			/** Divides the given value to this vector.
 			 * @param val The value for all three coordinates.
@@ -722,6 +726,16 @@ namespace AuroraFW {
 		}
 
 		template<typename T>
+		vec3<T> vec3<T>::multiply(const mat4<T>& mat) const
+		{
+			return vec3(
+				mat.r[0].x * x + mat.r[0].y * y + mat.r[0].z * z + mat.r[0].w,
+				mat.r[1].x * x + mat.r[1].y * y + mat.r[1].z * z + mat.r[1].w,
+				mat.r[2].x * x + mat.r[2].y * y + mat.r[2].z * z + mat.r[2].w
+				);
+		}
+
+		template<typename T>
 		vec3<T>& vec3<T>::divide(const vec3<T>& v)
 		{
 			x /= v.x;
@@ -932,5 +946,7 @@ namespace AuroraFW {
 		}
 	}
 }
+
+#include <AuroraFW/Math/Matrix4x4.h>
 
 #endif // AURORAFW_MATH_VECTOR3D_H

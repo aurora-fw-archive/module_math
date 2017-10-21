@@ -21,14 +21,6 @@
 
 namespace AuroraFW {
 	namespace Math {
-		template<typename T>
-		mat4<T>::mat4()
-		{}
-
-		template<typename T>
-		mat4<T>::mat4(T diagonal)
-		{
-			
-		}
+		template struct mat4<float>;
 	}
 }
