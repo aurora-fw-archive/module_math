@@ -17,7 +17,6 @@
 ****************************************************************************/
 
 #include <AuroraFW/Math/Vector3D.h>
-#include <string>
 
 namespace AuroraFW {
 	namespace Math {
