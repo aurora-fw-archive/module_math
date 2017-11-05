@@ -70,7 +70,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2(const T& , const T& );
-			
+
 			/** Constructs a vector using the coordinates from the given Vector3D.
 			 * The z value is not used.
 			 * @param v The vec3<T> to get both the x and y coordinates from.
@@ -95,7 +95,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2& add(const vec2<T>& );
-			
+
 			/** Subtracts the given vector's coordinates to this vector.
 			 * @param v The vector to get the coordinates from.
 			 * @return This vector with the subtracted coordinates.
@@ -140,7 +140,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2& subtract(const T& );
-			
+
 			/**
 			 * Multiplies the given value to this vector.
 			 * @param val The value for both coordinates.
@@ -150,7 +150,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2& multiply(const T& );
-			
+
 			/** Divides the given value to this vector.
 			 * @param val The value for both coordinates.
 			 * @return This vector with the divided coordinates.
@@ -226,13 +226,13 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2<T> operator-(const vec2<T>& );
-			
+
 			/** Multiplies the left vector's coordinates with the right vector.
 			 * @see operator/(const vec2& )
 			 * @since snapshot20190930
 			 */
 			vec2<T> operator*(const vec2<T>& );
-			
+
 			/** Divides the left vector's coordinates with the right vector.
 			 * @see operator*(const vec2& )
 			 * @since snapshot20190930
@@ -250,13 +250,13 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2<T> operator-(const T& );
-			
+
 			/** Multiplies vector with the given value.
 			 * @see operator/(const T& )
 			 * @since snapshot20190930
 			 */
 			vec2<T> operator*(const T& );
-			
+
 			/** Divides vector with the given value.
 			 * @see operator*(const T& )
 			 * @since snapshot20190930
@@ -268,19 +268,19 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator+=(const vec2<T>& );
-			
+
 			/** Subtracts the given vector to this vector.
 			 * @see operator+=(const vec2& )
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator-=(const vec2<T>& );
-			
+
 			/** Multiplies this vector by the given vector.
 			 * @see operator/=(const vec2& )
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator*=(const vec2<T>& );
-			
+
 			/** Divides this vector by the given vector.
 			 * @see operator*=(const vec2& )
 			 * @since snapshot20190930
@@ -292,19 +292,19 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator+=(const T& );
-			
+
 			/** Subtracts the given value to this vector.
 			 * @see operator+=(const T& )
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator-=(const T& );
-			
+
 			/** Multiplies this vector by the given value.
 			 * @see operator/=(const T& )
 			 * @since snapshot20190930
 			 */
 			vec2<T>& operator*=(const T& );
-			
+
 			/** Divides this vector by the given value.
 			 * @see operator*=(const T& )
 			 * @since snapshot20190930
@@ -317,7 +317,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			bool operator==(const vec2<T>& ) const;
-			
+
 			/** Compares this vector's coordinates with the given one
 			 * and returns <code>true</code> if any of the coordinates are different.
 			 * @see operator==()
@@ -332,7 +332,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			bool operator<(const vec2<T>& ) const;
-			
+
 			/** Compares this vector's coordinates with the given one
 			 * and returns <code>true</code> if all the coordinates from this vector
 			 * are lower or equal than the coordinates from the
@@ -341,7 +341,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			bool operator<=(const vec2<T>& ) const;
-			
+
 			/** Compares this vector's coordinates with the given one
 			 * and returns <code>true</code> if all the coordinates from this vector
 			 * are bigger than the coordinates from the given one
@@ -349,7 +349,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			bool operator>(const vec2<T>& ) const;
-			
+
 			/** Compares this vector's coordinates with the given one
 			 * and returns <code>true</code> if all the coordinates from this vector
 			 * are bigger or equal than the coordinates from the
@@ -365,27 +365,27 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			T magnitude() const;
-			
+
 			/** Returns the length of this vector.
 			 * @return The magnitude/length of this vector.
 			 * @see magnitude()
 			 * @since snapshot20190930
 			 */
 			T length() const;
-			
+
 			/** Return true if any coordinate of this vector is null.
 			 * @return <code>true</code> if any coordinate is NAN. <code>false</code> otherwhise.
 			 * @since snapshot20190930
 			 */
 			bool isNull() const;
-			
+
 			/** Normalizes this vector. (It retains the angle of the
 			 * vector but reduces it's length to 1)
 			 * @see normalized()
 			 * @since snapshot20190930
 			 */
 			void normalize();
-			
+
 			/** Returns a new normalized vector from this one. (It
 			 * retains the angle of this vector but the length
 			 * of the returned vector is 1)
@@ -394,7 +394,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			vec2<T> normalized() const;
-			
+
 			/** Returns the value of the dot product between this
 			 * vector and the given one.
 			 * @param other The vector to dot product with this one.
@@ -402,7 +402,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			T dot(const vec2<T>& ) const;
-			
+
 			/** Returns the distance from this vector to a point, whose
 			 * coordinates are on the given vector.
 			 * @param other The vector representing the point's coordinates.
@@ -411,7 +411,7 @@ namespace AuroraFW {
 			 * @since snapshot20190930
 			 */
 			T distanceToPoint(const vec2<T>& ) const;
-			
+
 			/** Returns the smallest distance from this vector to a line,
 			 * which is defined by a point and angle, provided by the
 			 * two given vectors.

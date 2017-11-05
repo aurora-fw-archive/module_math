@@ -172,19 +172,19 @@ namespace AuroraFW {
 		{
 			return multiply(mat);
 		}
-	
+
 		template<typename T>
 		vec3<T> mat4<T>::operator*(const vec3<T> &vec)
 		{
 			return multiply(vec);
 		}
-	
+
 		template<typename T>
 		vec4<T> mat4<T>::operator*(const vec4<T> &vec)
 		{
 			return multiply(vec);
 		}
-	
+
 	}
 }
 

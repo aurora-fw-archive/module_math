@@ -85,7 +85,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3(const T& , const T& , const T& );
-			
+
 			/** Constructs a vector using the coordinates from the given vec2<T>.
 			 * The z value will be defined as 0.
 			 * @param v The vec2<T> to get both the x and y coordinates from.
@@ -118,7 +118,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const vec3<T>& );
-			
+
 			/** Subtracts the given vector's coordinates to this vector.
 			 * @param v The vector to get the coordinates from.
 			 * @return This vector with the subtracted coordinates.
@@ -127,7 +127,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const vec3<T>& );
-			
+
 			/** Multiplies the given vector's coordinates to this vector.
 			 * @param v The vector to get the coordinates from.
 			 * @return This vector with the multiplied coordinates.
@@ -136,7 +136,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const vec3<T>& );
-			
+
 			/** Divides the given vector's coordinates to this vector.
 			 * @param v The vector to get the coordinates from.
 			 * @return This vector with the divided coordinates.
@@ -154,7 +154,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const T& );
-			
+
 			/** Subtracts the given value to this vector.
 			 * @param val The value for all three coordinates.
 			 * @return This vector with the subtracted coordinates.
@@ -163,7 +163,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const T& );
-			
+
 			/** Multiplies the given value to this vector.
 			 * @param val The value for all three coordinates.
 			 * @return This vector with the multiplied coordinates.
@@ -174,7 +174,7 @@ namespace AuroraFW {
 			vec3<T>& multiply(const T& );
 
 			vec3<T> multiply(const mat4<T> &) const;
-			
+
 			/** Divides the given value to this vector.
 			 * @param val The value for all three coordinates.
 			 * @return This vector with the divided coordinates.
@@ -194,7 +194,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& add(const T& , const T& , const T& );
-			
+
 			/** Subtracts the given values to this vector.
 			 * @param valX The value for the x coordinate.
 			 * @param valY The value for the y coordinate.
@@ -205,7 +205,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& subtract(const T& , const T& , const T& );
-			
+
 			/** Multiplies the given values to this vector.
 			 * @param valX The value for the x coordinate.
 			 * @param valY The value for the y coordinate.
@@ -216,7 +216,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& multiply(const T& , const T& , const T& );
-			
+
 			/** Divides the given values to this vector.
 			 * @param valX The value for the x coordinate.
 			 * @param valY The value for the y coordinate.
@@ -235,7 +235,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			void setX(const T& );
-			
+
 			/** Sets the y coordinate to the given value.
 			 * @param val The value of the y coordinate.
 			 * @see setX(const T& )
@@ -243,7 +243,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			void setY(const T& );
-			
+
 			/** Sets the z coordinate to the given value.
 			 * @param val The value of the z coordinate.
 			 * @see setX(const T& )
@@ -258,14 +258,14 @@ namespace AuroraFW {
 			 * @since snapshot20171003
 			 */
 			T getX() const;
-			
+
 			/** Gets the y coordinate.
 			 * @see getX()
 			 * @see getZ()
 			 * @since snapshot20171003
 			 */
 			T getY() const;
-			
+
 			/** Gets the z coordinate.
 			 * @see getX()
 			 * @see getY()
@@ -278,19 +278,19 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T> operator+(const vec3<T>& );
-			
+
 			/** Subtracts the right vector's coordinates to the left one.
 			 * @see operator+(const vec3<T>& )
 			 * @since snapshot20170930
 			 */
 			vec3<T> operator-(const vec3<T>& );
-			
+
 			/** Multiplies the left vector's coordinates with the right vector.
 			 * @see operator/(const vec3<T>& )
 			 * @since snapshot20170930
 			 */
 			vec3<T> operator*(const vec3<T>& );
-			
+
 			/** Divides the left vector's coordinates with the right vector.
 			 * @see operator*(const vec3<T>& )
 			 * @since snapshot20170930
@@ -302,18 +302,18 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T> operator+(const T& );
-			
+
 			/** Subtracts the given value to the vector.
 			 * @see operator+(const T& )
 			 */
 			vec3<T> operator-(const T& );
-			
+
 			/** Multiplies vector with the given value.
 			 * @see operator/(const T& )
 			 * @since snapshot20170930
 			 */
 			vec3<T> operator*(const T& );
-			
+
 			/** Divides vector with the given value.
 			 * @see operator*(const T& )
 			 * @since snapshot20170930
@@ -325,19 +325,19 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator+=(const vec3<T>& );
-			
+
 			/** Subtracts the given vector to this vector.
 			 * @see operator+=(const vec3<T>& )
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator-=(const vec3<T>& );
-			
+
 			/** Multiplies this vector by the given vector.
 			 * @see operator/=(const vec3<T>& )
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator*=(const vec3<T>& );
-			
+
 			/** Divides this vector by the given vector.
 			 * @see operator*=(const vec3<T>& )
 			 * @since snapshot20170930
@@ -349,19 +349,19 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator+=(const T& );
-			
+
 			/** Subtracts the given value to this vector.
 			 * @see operator+=(const T& )
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator-=(const T& );
-			
+
 			/** Multiplies this vector by the given value.
 			 * @see operator/=(const T& )
 			 * @since snapshot20170930
 			 */
 			vec3<T>& operator*=(const T& );
-			
+
 			/** Divides this vector by the given value.
 			 * @see operator*=(const T& )
 			 * @since snapshot20170930
@@ -375,7 +375,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			bool operator==(const vec3<T>& ) const;
-			
+
 			/**
 			 * Compares this vector's coordinates with the given one
 			 * and returns <code>true</code> if any of the coordinates are different.
@@ -522,7 +522,7 @@ namespace AuroraFW {
 			 * @since snapshot20170930
 			 */
 			T y;
-			
+
 			/**
 			 * The vector's z coordinate.
 			 * @see x

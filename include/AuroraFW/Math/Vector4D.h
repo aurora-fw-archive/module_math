@@ -164,7 +164,7 @@ namespace AuroraFW {
 		{
 			z = val;
 		}
-		
+
 		template<typename T>
 		inline void vec4<T>::setW(T val)
 		{
@@ -185,7 +185,7 @@ namespace AuroraFW {
 		vec4<T>::vec4(const T& x, const T& y, const T& z, const T& w)
 			: x(x), y(y), z(z), w(w)
 		{}
-		
+
 		template<typename T>
 		vec4<T>::vec4(const vec2<T>& v)
 			: x(v.x), y(v.y), z(0), w(0)
@@ -195,7 +195,7 @@ namespace AuroraFW {
 		vec4<T>::vec4(const vec2<T>& v, const T& z, const T& w)
 		: x(v.x), y(v.y), z(z), w(w)
 		{}
-		
+
 		template<typename T>
 		vec4<T>::vec4(const vec3<T>& v)
 			: x(v.x), y(v.y), z(v.z), w(0)
