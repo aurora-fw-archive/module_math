@@ -28,7 +28,7 @@ namespace AuroraFW {
 		 *	@return The smallest variable between a and b.
 		 *	@see inline const T& max()
 		 */
-		template<class T> 
+		template<class T>
 		AFW_EXPORT inline const T& min(const T& a, const T& b)
 		{
 			return (b < a) ? b : a;
@@ -39,7 +39,7 @@ namespace AuroraFW {
 		 *	@return The biggest variable between a and b.
 		 *	@see inline const T& min()
 		 */
-		template<class T> 
+		template<class T>
 		AFW_EXPORT inline const T& max(const T& a, const T& b)
 		{
 			return (a < b) ? b : a;
