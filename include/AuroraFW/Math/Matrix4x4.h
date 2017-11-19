@@ -62,7 +62,7 @@ namespace AuroraFW {
 			static mat4<T> perspective(T , T , T , T );
 			static mat4<T> lookAt(const vec3<T> &, const vec3<T> &, const vec3<T> &);
 
-			static mat4<T> translation(const vec3<T> &);
+			static mat4<T> translate(const vec3<T> &);
 			static mat4<T> rotation(T, const vec3<T> &);
 			static mat4<T> scale(const vec3<T> &);
 			static mat4<T> invert(const mat4<T> &);
@@ -183,6 +183,33 @@ namespace AuroraFW {
 		vec4<T> mat4<T>::operator*(const vec4<T> &vec)
 		{
 			return multiply(vec);
+		}
+
+		template<typename T>
+		mat4<T> mat4<T>::orthographic(T left, T right, T bottom, T top, T near, T far)
+		{
+			mat4<T> ret(1.0f);
+
+			ret.m[0][0] = 2.0f / (right - left);
+			ret.m[1][1] = 2.0f / (top - bottom);
+			ret.m[2][2] = 2.0f / (near - far);
+			ret.m[3][0] = (left + right) / (left - right);
+			ret.m[3][1] = (bottom + top) / (bottom - top);
+			ret.m[3][2] = (far + near) / (far - near);
+
+			return ret;
+		}
+
+		template<typename T>
+		mat4<T> mat4<T>::translate(const vec3<T>& vec)
+		{
+			mat4<T> ret(1.0f);
+
+			ret.m[3][0] = vec.x;
+			ret.m[3][1] = vec.y;
+			ret.m[3][2] = vec.z;
+
+			return ret;
 		}
 
 	}
