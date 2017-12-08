@@ -38,9 +38,10 @@ namespace AuroraFW {
 
 		template<typename T>
 		inline Parser<T>::Parser(const char c)
-			: expr(std::string(c))
-		{}
-		
+		{
+			expr = c;
+		}
+
 		template<typename T>
 		inline Parser<T>::Parser(const std::string str)
 			: expr(str)
