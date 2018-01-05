@@ -186,16 +186,16 @@ namespace AuroraFW {
 		}
 
 		template<typename T>
-		mat4<T> mat4<T>::orthographic(T left, T right, T bottom, T top, T near, T far)
+		mat4<T> mat4<T>::orthographic(T left, T right, T bottom, T top, T near_, T far_)
 		{
 			mat4<T> ret(1.0f);
 
 			ret.m[0][0] = 2.0f / (right - left);
 			ret.m[1][1] = 2.0f / (top - bottom);
-			ret.m[2][2] = 2.0f / (near - far);
+			ret.m[2][2] = 2.0f / (near_ - far_);
 			ret.m[3][0] = (left + right) / (left - right);
 			ret.m[3][1] = (bottom + top) / (bottom - top);
-			ret.m[3][2] = (far + near) / (far - near);
+			ret.m[3][2] = (far_ + near_) / (far_ - near_);
 
 			return ret;
 		}
