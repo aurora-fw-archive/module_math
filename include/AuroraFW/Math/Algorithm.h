@@ -54,6 +54,16 @@ namespace AuroraFW {
 		{
 			return (v > lo) ? (v < hi) ? v : hi : lo;
 		}
+
+		/**
+		 * Returns the absolute value of a variable.
+		 * @return The absolute value.
+		 */
+		template<class T>
+		AFW_EXPORT inline const T abs(const T& v)
+		{
+			return (v > 0) ? v : -v;
+		}
 	}
 }
 
