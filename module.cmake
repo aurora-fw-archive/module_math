@@ -25,9 +25,9 @@ include_directories(${AURORAFW_MODULE_MATH_DIR}/include)
 file(GLOB_RECURSE AURORAFW_MODULE_MATH_HEADERS ${AURORAFW_MODULE_MATH_DIR}/include/*.*)
 file(GLOB_RECURSE AURORAFW_MODULE_MATH_SOURCE ${AURORAFW_MODULE_MATH_SOURCE_DIR}/*.*)
 
-add_library (aurorafw-math SHARED ${AURORAFW_MODULE_MATH_SOURCE})
+#add_library (aurorafw-math SHARED ${AURORAFW_MODULE_MATH_SOURCE} ${AURORAFW_MODULE_MATH_HEADERS})
 if(AURORA_PCH)
 	add_precompiled_header(aurorafw-math "${AURORAFW_MODULE_MATH_HEADERS}")
 endif()
 
-set_target_properties(aurorafw-math PROPERTIES OUTPUT_NAME aurorafw-math)
+#set_target_properties(aurorafw-math PROPERTIES OUTPUT_NAME aurorafw-math)
