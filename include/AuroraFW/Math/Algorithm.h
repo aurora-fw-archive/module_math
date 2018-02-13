@@ -20,6 +20,11 @@
 #define AURORAFW_MATH_ALGORITHM_H
 
 #include <AuroraFW/Global.h>
+#if(AFW_TARGET_PRAGMA_ONCE_SUPPORT)
+	#pragma once
+#endif
+
+#include <AuroraFW/Internal/Config.h>
 
 namespace AuroraFW {
 	namespace Math {
@@ -29,7 +34,7 @@ namespace AuroraFW {
 		 *	@see inline const T& max()
 		 */
 		template<class T>
-		AFW_EXPORT inline const T& min(const T& a, const T& b)
+		AFW_API inline const T& min(const T& a, const T& b)
 		{
 			return (b < a) ? b : a;
 		}
@@ -40,7 +45,7 @@ namespace AuroraFW {
 		 *	@see inline const T& min()
 		 */
 		template<class T>
-		AFW_EXPORT inline const T& max(const T& a, const T& b)
+		AFW_API inline const T& max(const T& a, const T& b)
 		{
 			return (a < b) ? b : a;
 		}
@@ -50,7 +55,7 @@ namespace AuroraFW {
 		 *	@return The clamped variable.
 		 */
 		template<class T>
-		AFW_EXPORT inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
+		AFW_API inline constexpr const T& clamp( const T& v, const T& lo, const T& hi )
 		{
 			return (v > lo) ? (v < hi) ? v : hi : lo;
 		}
@@ -60,7 +65,7 @@ namespace AuroraFW {
 		 * @return The absolute value.
 		 */
 		template<class T>
-		AFW_EXPORT inline const T abs(const T& v)
+		AFW_API inline const T abs(const T& v)
 		{
 			return (v > 0) ? v : -v;
 		}

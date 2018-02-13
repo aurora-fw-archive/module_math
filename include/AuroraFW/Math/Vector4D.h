@@ -20,6 +20,11 @@
 #define AURORAFW_MATH_VECTOR4D_H
 
 #include <AuroraFW/Global.h>
+#if(AFW_TARGET_PRAGMA_ONCE_SUPPORT)
+	#pragma once
+#endif
+
+#include <AuroraFW/Internal/Config.h>
 
 #include <AuroraFW/STDL/STL/IStream.h>
 #include <AuroraFW/STDL/STL/OStream.h>
@@ -39,7 +44,7 @@ namespace AuroraFW {
 		 * @since snapshot20171003
 		 */
 		template<typename T>
-		struct AFW_EXPORT vec4 {
+		struct AFW_API vec4 {
 			vec4();
 			vec4(const T& );
 			vec4(const T& , const T& , const T& , const T& );

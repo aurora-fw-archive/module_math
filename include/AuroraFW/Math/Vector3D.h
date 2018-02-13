@@ -25,6 +25,11 @@
 #define AURORAFW_MATH_VECTOR3D_H
 
 #include <AuroraFW/Global.h>
+#if(AFW_TARGET_PRAGMA_ONCE_SUPPORT)
+	#pragma once
+#endif
+
+#include <AuroraFW/Internal/Config.h>
 
 #include <AuroraFW/STDL/STL/OStream.h>
 
@@ -46,7 +51,7 @@ namespace AuroraFW {
 		 * @since snapshot20170930
 		 */
 		template<typename T>
-		struct AFW_EXPORT vec3 {
+		struct AFW_API vec3 {
 			/** Constructs a vector with zero coordinates.
 			 * @see vec3(const T& )
 			 * @see vec3(const T& , const T& )

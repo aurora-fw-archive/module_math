@@ -19,6 +19,11 @@
 #ifndef AURORAFW_MATH_H
 #define AURORAFW_MATH_H
 
+#include <AuroraFW/Global.h>
+#if(AFW_TARGET_PRAGMA_ONCE_SUPPORT)
+	#pragma once
+#endif
+
 #include <AuroraFW/Math/Vector2D.h>
 #include <AuroraFW/Math/Vector3D.h>
 #include <AuroraFW/Math/Vector4D.h>

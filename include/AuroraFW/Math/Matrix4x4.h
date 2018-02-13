@@ -20,6 +20,11 @@
 #define AURORAFW_MATH_MATRIX4X4_H
 
 #include <AuroraFW/Global.h>
+#if(AFW_TARGET_PRAGMA_ONCE_SUPPORT)
+	#pragma once
+#endif
+
+#include <AuroraFW/Internal/Config.h>
 
 #include <AuroraFW/STDL/STL/OStream.h>
 #include <AuroraFW/STDL/LibC/String.h>
@@ -29,7 +34,8 @@
 namespace AuroraFW {
 	namespace Math {
 		template<typename T>
-		struct AFW_EXPORT mat4 {
+		struct AFW_API mat4
+		{
 			mat4();
 			mat4(T );
 			mat4(const mat4<T> &);
@@ -49,10 +55,10 @@ namespace AuroraFW {
 
 			mat4<T> &invert();
 
-			vec4<T> getColumn(afwuint_t) const;
+			vec4<T> getColumn(uint_t) const;
 			vec3<T> getPos() const;
 
-			void setColumn(afwuint_t, const vec4<T> &);
+			void setColumn(uint_t, const vec4<T> &);
 			void setPos(const vec3<T> &);
 
 			//Static methods
