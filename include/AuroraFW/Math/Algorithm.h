@@ -26,6 +26,7 @@
 
 #include <AuroraFW/Internal/Config.h>
 
+#ifdef AFW_TARGET_CXX
 namespace AuroraFW {
 	namespace Math {
 		/**
@@ -71,5 +72,15 @@ namespace AuroraFW {
 		}
 	}
 }
+#else
+inline const int& min(const int& a, const int& b)
+{
+	return (b < a) ? b : a;
+}
+inline const int32& min(const int32& a, const int32& b)
+{
+	return (b < a) ? b : a;
+}
+#endif
 
 #endif // AURORAFW_MATH_ALGORITHM_H
