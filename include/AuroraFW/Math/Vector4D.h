@@ -526,6 +526,6 @@ namespace AuroraFW {
 	}
 }
 
-#include <AuroraFW/Math/Matrix4x4.h>
+#include <AuroraFW/Math/Matrix.h>
 
 #endif // AURORAFW_MATH_VECTOR4D_H
