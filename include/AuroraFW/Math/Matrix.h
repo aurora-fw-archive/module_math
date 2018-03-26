@@ -37,7 +37,7 @@ namespace AuroraFW {
 		struct AFW_API mat
 		{
 			mat();
-			mat(T );
+			constexpr mat(T );
 			mat(const mat<T, m, n> &);
 			mat(T* );
 
@@ -45,14 +45,14 @@ namespace AuroraFW {
 			vec3<T> multiply(const vec3<T> &) const;
 			vec4<T> multiply(const vec4<T> &) const;
 
-			mat<T> operator*(const mat<T> &);
-			mat<T>& operator*=(const mat<T> &);
+			mat<T, m, n> operator*(const mat<T, m, n> &);
+			mat<T, m, n>& operator*=(const mat<T, m, n> &);
 			vec3<T> operator*(const vec3<T> &) const;
 			vec3<T> operator*(const vec3<T> &);
 			vec3<T> operator*(const vec4<T> &) const;
 			vec4<T> operator*(const vec4<T> &);
 
-			mat<T> &invert();
+			mat<T, m, n> &invert();
 
 			vec4<T> getColumn(uint_t) const;
 			vec3<T> getPos() const;
@@ -61,17 +61,17 @@ namespace AuroraFW {
 			void setPos(const vec3<T> &);
 
 			//Static methods
-			static mat<T> identity();
+			static mat<T, m, n> identity();
 
-			static mat<T> orthographic(T , T , T , T , T , T );
-			static mat<T> perspective(T , T , T , T );
-			static mat<T> lookAt(const vec3<T> &, const vec3<T> &, const vec3<T> &);
+			static mat<T, m, n> orthographic(T , T , T , T , T , T );
+			static mat<T, m, n> perspective(T , T , T , T );
+			static mat<T, m, n> lookAt(const vec3<T> &, const vec3<T> &, const vec3<T> &);
 
-			static mat<T> translate(const vec3<T> &);
-			static mat<T> rotation(T, const vec3<T> &);
-			static mat<T> scale(const vec3<T> &);
-			static mat<T> invert(const mat4<T> &);
-			static mat<T> transpose(const mat4<T> &);
+			static mat<T, m, n> translate(const vec3<T> &);
+			static mat<T, m, n> rotation(T, const vec3<T> &);
+			static mat<T, m, n> scale(const vec3<T> &);
+			static mat<T, m, n> invert(const mat4<T> &);
+			static mat<T, m, n> transpose(const mat4<T> &);
 
 			std::string toString() const;
 

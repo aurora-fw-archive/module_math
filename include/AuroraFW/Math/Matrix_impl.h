@@ -35,7 +35,7 @@ namespace AuroraFW {
 		template<typename T, uint m, uint n>
 		mat<T, m, n>::mat()
 		{
-			memset(m, 0, m * n * sizeof(T));
+			memset(matrix, 0, m * n * sizeof(T));
 		}
 
 		template<typename T, uint m, uint n>
@@ -50,38 +50,30 @@ namespace AuroraFW {
 			}
 		}
 
-		template<typename T>
-		mat<T, m, n>::mat(T diagonal)
+		template<typename T, uint m, uint n>
+		constexpr mat<T, m, n>::mat(T diagonal)
 		{
-			memset(m, 0, m * n * sizeof(T));
+			static_assert(m == n, "invalid diagonal matrix");
+			memset(matrix, 0, m * n * sizeof(T));
 			matrix[0][0] = diagonal;
 			matrix[1][1] = diagonal;
 			matrix[2][2] = diagonal;
 			matrix[3][3] = diagonal;
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n>::mat(T* mat)
 		{
 			memcpy(m, mat, 4 * 4 * sizeof(T));
 		}
 
-		template<typename T>
-		mat<T, m, n>::mat(const vec4<T> &r0, const vec4<T> &r1, const vec4<T> &r2, const vec4<T> &r3)
-		{
-			r[0] = r0;
-			r[1] = r1;
-			r[2] = r2;
-			r[3] = r3;
-		}
-
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n> mat<T, m, n>::identity()
 		{
 			return mat(static_cast<T>(1));
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n>& mat<T, m, n>::multiply(const mat<T, m, n>& mat)
 		{
 			T data[4][4];
@@ -101,43 +93,43 @@ namespace AuroraFW {
 			return *this;
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		vec3<T> mat<T, m, n>::multiply(const vec3<T>& vec) const
 		{
 			return vec.multiply(*this);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		vec4<T> mat<T, m, n>::multiply(const vec4<T>& vec) const
 		{
 			return vec.multiply(*this);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n> mat<T, m, n>::operator*(const mat<T, m, n> &mat)
 		{
 			return multiply(mat);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n>& mat<T, m, n>::operator*=(const mat<T, m, n> &mat)
 		{
 			return multiply(mat);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		vec3<T> mat<T, m, n>::operator*(const vec3<T> &vec)
 		{
 			return multiply(vec);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		vec4<T> mat<T, m, n>::operator*(const vec4<T> &vec)
 		{
 			return multiply(vec);
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n> mat<T, m, n>::orthographic(T left, T right, T bottom, T top, T near_, T far_)
 		{
 			mat<T, m, n> ret(1.0f);
@@ -152,7 +144,7 @@ namespace AuroraFW {
 			return ret;
 		}
 
-		template<typename T>
+		template<typename T, uint m, uint n>
 		mat<T, m, n> mat<T, m, n>::translate(const vec3<T>& vec)
 		{
 			mat<T, m, n> ret(1.0f);
