@@ -90,7 +90,7 @@ namespace AuroraFW {
 			 * @see vec2(const vec3<T>& )
 			 * @since snapshot20190930
 			 */
-            explicit vec2(const vec4<T>& );
+			explicit vec2(const vec4<T>& );
 
 			/** Adds the given vector's coordinates to this vector.
 			 * @param v The vector to get the coordinates from.
