@@ -16,18 +16,30 @@
 
 message(STATUS "Loading math module...")
 
-if (NOT CONFIGURED_ONCE)
-	set(AURORAFW_MODULE_MATH_SOURCE_DIR ${AURORAFW_MODULE_MATH_DIR}/src)
+if(AURORA_DLANG)
+	if (NOT CONFIGURED_ONCE)
+		set(AURORAFW_MODULE_MATH_SOURCE_DIR ${AURORAFW_MODULE_MATH_DIR}/source)
+	endif()
+	include_directories(${AURORAFW_MODULE_MATH_SOURCE_DIR})
+
+	file(GLOB_RECURSE AURORAFW_MODULE_MATH_SOURCE ${AURORAFW_MODULE_MATH_SOURCE_DIR}/*.d)
+
+	add_library (aurorafw-math SHARED ${AURORAFW_MODULE_MATH_SOURCE})
+	aurorafw_add_library_target(aurorafw-math SHARED)
+else()
+	include_directories(${AURORAFW_MODULE_MATH_DIR}/legacy/include)
+
+	if (NOT CONFIGURED_ONCE)
+		set(AURORAFW_MODULE_MATH_SOURCE_DIR ${AURORAFW_MODULE_MATH_DIR}/legacy/src)
+	endif()
+
+	file(GLOB_RECURSE AURORAFW_MODULE_MATH_HEADERS ${AURORAFW_MODULE_MATH_DIR}/include/*.h)
+	file(GLOB_RECURSE AURORAFW_MODULE_MATH_SOURCE ${AURORAFW_MODULE_MATH_SOURCE_DIR}/*.cpp)
+
+	#add_library (aurorafw-math SHARED ${AURORAFW_MODULE_MATH_SOURCE} ${AURORAFW_MODULE_MATH_HEADERS})
+	#if(AURORAFW_PCH)
+		#add_precompiled_header(aurorafw-math "${AURORAFW_MODULE_MATH_HEADERS}")
+	#endif()
 endif()
 
-include_directories(${AURORAFW_MODULE_MATH_DIR}/include)
-
-file(GLOB_RECURSE AURORAFW_MODULE_MATH_HEADERS ${AURORAFW_MODULE_MATH_DIR}/include/*.*)
-file(GLOB_RECURSE AURORAFW_MODULE_MATH_SOURCE ${AURORAFW_MODULE_MATH_SOURCE_DIR}/*.*)
-
-#add_library (aurorafw-math SHARED ${AURORAFW_MODULE_MATH_SOURCE} ${AURORAFW_MODULE_MATH_HEADERS})
-if(AURORAFW_PCH)
-	add_precompiled_header(aurorafw-math "${AURORAFW_MODULE_MATH_HEADERS}")
-endif()
-
-#set_target_properties(aurorafw-math PROPERTIES OUTPUT_NAME aurorafw-math)
+install(TARGETS aurorafw-math DESTINATION lib)
